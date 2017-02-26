@@ -1,0 +1,32 @@
+body {
+	background-color: #42c5f4;
+	font-size: 12px;
+	color: #414df4;
+}
+
+p {
+	font-style: bold;
+}
+	
+.image {
+	height: 300px;
+	width: 600px;
+	border: 2px;
+	border-color: #f44141;
+	border-style: dashed;
+
+
+h3 {
+	text-align:center;
+}
+
+.video {
+	width: 560px;
+	height: 315px;
+	border: none;
+	
+}
+	
+
+
+/*allowfullscreen??*/

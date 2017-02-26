@@ -1,0 +1,107 @@
+body {
+	background-color: #67c5db;
+	font-size: 18px;
+	font-family: Helvetica;
+	line-height: 1em;
+	font-weight: bold;
+}
+
+.container {
+	width: 100%;
+	height: 323px;
+}
+
+.login {
+	width: 500px;
+	
+	border: thin solid black;
+	box-shadow: inset 0 0 5px black;
+	border-radius: 10px;
+	margin: 10% auto;
+}
+
+.form-header {
+	width: 100%;
+	height: 10%;
+	background-color: #deede0;
+	border-bottom: 2px solid #alalal;
+	text-align: center;
+	padding: 3% 0 3% 0;
+	border-radius: 10px 10px 0 0;
+	border-bottom: solid;
+    border-width: thin;
+}
+
+form {
+	background-color: #eff0f2;
+	padding: 5% 5%;
+	border-radius: 0 0 10px 10px;
+}
+
+input[type="text"],       /*this is how to target the imput types*/
+input[type:"password"] {
+	outline: none;
+	font-size: 25px;
+	width: 450px;
+	font-family: caption;
+	border: 4px double #dedee0;
+	padding: 5px;
+	margin: 5% 0 0 0;
+}
+
+input[type="text"]:focus,
+input[type:"password"]:focus {
+	border: 0 0 5px #000;
+	box-shadow: inset 0 0 10px #alalal;
+}
+
+.btn {
+	outline: none;
+	color: #alalal;
+	font-weight: bold;
+	font-size: 20;
+	width: 125px;
+	height: 50px;
+	margin: 45px 0 0 110px;
+	text-align: center;
+	border-radius: 25px;
+	background-color: #dedee0;
+	border: 2px solid #alalal;
+}
+
+.btn:hover {
+	color: #000000;
+	background-color: #dedee0;
+	box-shadow: inset 0 0 5px #000000;
+}
+
+.chk {
+	margin: 5% 0 0 0;
+}
+
+.rem {
+	margin: 5% 0 0 10px;
+	font-size: 12px;
+}
+
+.forgot {
+	width: 100%;
+	font-size: x-smal;
+	color: #ffffff ;
+	text-decoration: none;
+}
+
+.forgot a {
+	margin: 0 0 0 35%;
+}
+
+/*Anchor tags need special attributes to show where to link to*/
+ a a:active a:link  a:visited {
+	color: #alalal;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #ffffff
+}

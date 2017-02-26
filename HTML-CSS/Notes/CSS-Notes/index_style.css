@@ -1,0 +1,5 @@
+.bg-image {
+	background-image: url(../images/chihuahua.jpg);
+	height: 200px;
+	background-position: center;
+}
