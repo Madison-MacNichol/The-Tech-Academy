@@ -1,7 +1,7 @@
-### H3 This is a collection of projcets completed for courses at The Tech Academy
+### This is a collection of projcets completed for courses at The Tech Academy
 ***
 
-#### H4 Objective
+#### Objective
 
 These projects are designed to help me learn the the syntax, good practice and design of HTML & CSS through demo projects and practice tutorials.
 
