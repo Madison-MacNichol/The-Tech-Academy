@@ -1,7 +1,7 @@
-### H3 This is the interface of a login page
+### This is the interface of a login page
 ***
 
-#### H4 Objective
+#### Objective
 
 This drill was to learn the HTML & CSS code to create and stylize a login page, similar to what you see when loggin into your bank, email, school or work accounts
 
