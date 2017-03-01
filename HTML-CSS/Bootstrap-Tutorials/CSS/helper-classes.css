@@ -1,0 +1,6 @@
+.imghead {
+	background-image: url("../chihuahua.jpg");
+	background-position: bottom center;
+	background-size: cover;
+	height: 300px;
+}
