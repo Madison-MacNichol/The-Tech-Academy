@@ -1,1 +1,1 @@
-These are more samples of me experimenting with different bootstrap elements.
+These are samples of my experimentation with different bootstrap elements. In my endevour to learn how to better use the program, I came across many useful styling elemants and built-in features. This is a collection of tutorials I have kept for myself in order to refer back to later.
