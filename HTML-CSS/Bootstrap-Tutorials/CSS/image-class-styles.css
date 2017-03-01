@@ -1,0 +1,6 @@
+@media (max-width: 767px) {
+	.img-responsive {
+		max-width: 50%;
+		min-width: 300px; /*this makes it so the photo will not get too small regardless of the browser size*/
+	}
+}
