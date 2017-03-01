@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <!--<link rel="stylesheet" href="css/styles.css">-->
+    <title>Bootstrap</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <section class="col-xs-12">
+
+<form>
+    <div class="form-group">
+        <label for="inputName">Name</label>
+        <input class="form-control" type="text"
+            id="inputName" placeholder="Your Name">
+    </div>
+
+    <div class="radio">
+        <label>
+            <input name="options" type="radio"> <!--by giving both radio sections the same name, it allows that only one box is selectable at a time. Without this, both/all can be checked-->
+            One
+        </label>
+    </div>
+
+    <div class="radio disabled"> <!--if you want these two options to be side by side rather than one under the other use the class="radio-inline" option and delete the div wraps around BOTH checkboxes and put it instead wrapping about both TOGETHER-->
+        <label>
+            <input name="options" type="radio" disabled>
+            Two
+        </label>
+    </div>
+	
+	<div class="checkbox">
+        <label>
+            <input type="checkbox">
+            Three
+        </label>
+    </div>
+	
+    <input class="btn btn-default"
+        type="submit" value="submit">
+</form> 
+
+
+        </section>
+    </div><!-- row -->
+</div><!-- content container -->
+
+
+<script src="./jquery-3.1.1.min.js"></script>
+<script src="./bootstrap.min.js"></script>
+<!--<script src="./script.js"></script>-->
+</body>
+</html>

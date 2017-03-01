@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <!--<link rel="stylesheet" href="css/styles.css">-->
+    <title>Bootstrap</title>
+</head>
+<body>
+
+<div class="container"> <!--these forms are good for short sets of inputs, like login pages-->
+    <div class="row">
+        <section class="col-xs-12">
+
+<form class="form-inline"> <!--to center this form on the screen, use css text-align: center; and target the form-inline class-->
+    <div class="form-group">
+        <label class="sr-only" for="inputEmail"> <!--if you want to hide the lables for smaller screens, use the class="sr-only" so that screen readers for the disabled can still know what the labels are-->
+            Email address
+        </label>
+        <input type="email" class="form-control"
+            id="inputEmail" placeholder="Email">
+    </div>
+
+    <div class="form-group">
+        <label
+            for="inputPassword">Password</label>
+        <input type="password" class="form-control"
+            id="inputPassword" placeholder="Password">
+    </div>
+
+    <button type="submit"
+        class="btn btn-default">Sign in</button>
+
+    <div class="checkbox">
+        <label>
+            <input type="checkbox"> Remember me
+        </label>
+    </div>
+</form>
+
+
+
+        </section>
+    </div><!-- row -->
+</div><!-- content container -->
+
+
+<script src="./jquery-3.1.1.min.js"></script>
+<script src="./bootstrap.min.js"></script>
+<!--<script src="js/script.js"></script>-->
+</body>
+</html>
