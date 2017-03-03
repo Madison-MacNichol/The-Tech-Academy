@@ -1,0 +1,8 @@
+/*.content {
+	padding-top: 70px;
+} /*this just moves the first section down a bit so its not so cramped*/ /*not needed for next part of video but wanted to leave the note*/
+
+.navbar-default {
+	background-color: pink;
+	border-color: none;
+}
