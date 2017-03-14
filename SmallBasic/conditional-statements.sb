@@ -1,0 +1,79 @@
+If (5<10)Then
+  TextWindow.WriteLine("vijf is minder dan tien")
+EndIf
+If(10*2>5*2)Then
+  TextWindow.WriteLine("twintig is grooter dan tien")
+EndIf
+
+If (Clock.Hour<12)Then
+  TextWindow.WriteLine("Het is morgen")
+ElseIf (Clock.Hour>=12)then
+  TextWindow.WriteLine("Het is avond")
+EndIf
+
+If(Clock.Hour<12)Then
+  TextWindow.WriteLine("Het is morgen")
+Else
+  TextWindow.WriteLine("Het is avond")
+EndIf
+
+TextWindow.Write("Vul een nummer wie heeft en decimale in")
+number= TextWindow.ReadNumber()
+Program.Delay(1000)
+TextWindow.Write("Nu, gaan we jouw nummer ronden!")
+Program.Delay(1000)
+TextWindow.Write("Jouw afgeronde nummer is:" +Math.Round(number)+".")
+Program.Delay(1000)
+remainder= Math.Remainder(Math.Round(number),2)
+If (remainder=0)Then
+  TextWindow.WriteLine("Dit nummer is even!")
+  Program.Delay(1000)
+Else
+  TextWindow.WriteLine("Dit nummer is oneven!")
+  Program.Delay(1000)
+  EndIf
+
+start:
+TextWindow.Write("Ben jij vegan?")
+vegan= TextWindow.Read()
+If vegan="ja"Then
+  TextWindow.WriteLine("Ja dat weet ik al, je heeft het veel keer gezegd.")
+ElseIf vegan= "nee" then
+  TextWindow.WriteLine("Kijk dan! Vlees is weer on het menu!")
+Else
+  TextWindow.WriteLine("Vul dan ja of nee, alstublieft")
+  Goto start
+EndIf
+
+  start:
+  TextWindow.Write("Hoe oud bent u?")
+  leeftijd= TextWindow.Read()
+  Program.Delay(1000)
+  TextWindow.Write("Even kijken...")
+  Program.Delay(1000)
+  If (leeftijd>=18) Then
+    TextWindow.WriteLine("Ja goed, wat for alcohol wilt u?")
+    Program.Delay(1000)
+  Else
+    TextWindow.WriteLine("Sorry hoor, u magt neit alcohol kopen")
+    Program.Delay(1000)
+  EndIf
+ 
+
+   start:
+  TextWindow.Write("Hoeveel stukjes taart blijven er over?")
+  nummer= TextWindow.Read()
+  Program.Delay(1000)
+  TextWindow.Write("Even kijken...")
+  Program.Delay(1000)
+  remainder= Math.Remainder(Math.Round(nummer),2)
+  Math.Ceiling(nummer)
+ If (remainder=0)Then
+    TextWindow.WriteLine("Oh lekker!")
+    Program.Delay(1000)
+  Else
+    TextWindow.WriteLine("Wie geeft gewoon een deeltje gegeten?!")
+    Program.Delay(1000)
+  EndIf
+  
+  

@@ -1,0 +1,32 @@
+
+GraphicsWindow.Height=500
+GraphicsWindow.Width=700
+GraphicsWindow.BackgroundColor="silver"
+GraphicsWindow.Title="The Graphics Window"
+GraphicsWindow.Show()
+
+GraphicsWindow.DrawLine(10,10,200,10)
+GraphicsWindow.DrawLine(10,10,10,200)
+GraphicsWindow.DrawLine(10,200,200,200)
+GraphicsWindow.DrawLine(200,10,200,200)
+
+GraphicsWindow.DrawLine(10,200,200,10)
+GraphicsWindow.DrawLine(10,10,200,200)
+
+
+GraphicsWindow.Height = 500
+GraphicsWindow.Width = 500
+GraphicsWindow.BackgroundColor = "Silver"
+GraphicsWindow.Title = "The Colored Square!"
+GraphicsWindow.DrawLine(10,10,450,10)
+GraphicsWindow.PenWidth = 10
+GraphicsWindow.PenColor = "Red"
+GraphicsWindow.DrawLine(10,10,10,450)
+GraphicsWindow.PenWidth = 20
+GraphicsWindow.PenColor = "Blue"
+GraphicsWindow.DrawLine(10,450,450,450)
+GraphicsWindow.PenWidth = 30
+GraphicsWindow.PenColor = "Yellow"
+GraphicsWindow.DrawLine(450,10,450,450)
+GraphicsWindow.PenWidth = 40
+GraphicsWindow.PenColor = "Green"

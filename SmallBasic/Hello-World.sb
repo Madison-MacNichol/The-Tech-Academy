@@ -1,0 +1,4 @@
+TextWindow.BackgroundColor="red"
+TextWindow.ForegroundColor="white"
+TextWindow.Pause()
+TextWindow.WriteLine("Hello Madi. Nice to see you again!")

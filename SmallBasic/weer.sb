@@ -1,0 +1,5 @@
+TextWindow.Title="Het weer in Nederland"
+TextWindow.Write("Wat voor weer hebben we vandaag?")
+weer= TextWindow.Read()
+TextWindow.WriteLine(weer+ "?! Oh maar in Nederland dat is best normal!")
+TextWindow.Top=0

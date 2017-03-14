@@ -1,0 +1,50 @@
+amount= 1
+While(amount<1025)
+  TextWindow.WriteLine(amount)
+  amount= amount*2
+  EndWhile
+  
+  For B=1 To 10
+  TextWindow.WriteLine(B)
+  EndFor
+
+  begin:
+a=50
+If a>25 Then
+  TextWindow.WriteLine("50is more than 25")
+  Goto begin
+EndIf
+
+For b=2 To 30 Step 2
+  TextWindow.WriteLine(b)
+EndFor
+
+
+For b=29 To 1 Step 2
+  TextWindow.WriteLine(b)
+  EndFor
+
+
+b=29
+start:
+TextWindow.WriteLine(b)
+b=b-2
+If (0<b)Then
+  Goto start
+EndIf
+
+TextWindow.Write("Type een nummer:")
+erste_nummer= TextWindow.ReadNumber()
+TextWindow.Write("Type een nummer:")
+tweede_nummer= TextWindow.ReadNumber()
+If(erste_nummer>tweede_nummer) Then
+  larger= erste_nummer
+Else
+  larger=tweede_nummer
+EndIf
+TextWindow.WriteLine("Het groter nummer is:"+ larger)
+
+For b=100 To 1 Step -1
+  TextWindow.WriteLine(b)
+  Program.Delay(100)
+EndFor
