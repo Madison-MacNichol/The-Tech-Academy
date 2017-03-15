@@ -1,0 +1,13 @@
+
+
+start:
+TextWindow.Write("Type een nummer alstublieft.")
+first_number= TextWindow.ReadNumber()
+TextWindow.Write("Type nog een nummer alstublieft.")
+second_number= TextWindow.ReadNumber()
+If (first_number>second_number) Then
+  larger= first_number
+Else
+  larger= second_number
+EndIf
+TextWindow.WriteLine("De groter nummer is" + larger)

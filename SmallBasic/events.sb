@@ -1,0 +1,39 @@
+GraphicsWindow.Title = "It's raining cats and dogs!"
+GraphicsWindow.Width = 700
+GraphicsWindow.Height = 700
+GraphicsWindow.MouseDown = Pics
+Sub Pics
+ Picture = Flickr.GetRandomPicture("Cats, Dogs")
+ GraphicsWindow.DrawResizedImage(Picture, 0, 0, 700, 700)
+EndSub
+
+GraphicsWindow.DrawBoundText(250, 200, 100, "Click the screen!")
+GraphicsWindow.MouseDown = Click
+GraphicsWindow.BrushColor = "Yellow"
+GraphicsWindow.BackgroundColor = "Black"
+Sub Click
+ GraphicsWindow.ShowMessage("You clicked the mouse!", "NOTICE")
+ A = GraphicsWindow.MouseX - 5
+ B = GraphicsWindow.MouseY - 5
+GraphicsWindow.FillTriangle(A, B, 30, 30, 40, 40)
+EndSub
+  
+  GraphicsWindow.MouseMove = A
+GraphicsWindow.MouseDown = B
+GraphicsWindow.BackgroundColor = "SkyBlue"
+GraphicsWindow.PenWidth = (25)
+Sub B
+ C = GraphicsWindow.MouseX
+ D = GraphicsWindow.MouseY
+EndSub
+Sub A
+ E = GraphicsWindow.MouseX
+ F = GraphicsWindow.MouseY
+ If (Mouse.IsLeftButtonDown) Then
+ GraphicsWindow.PenColor = GraphicsWindow.GetRandomColor()
+ GraphicsWindow.DrawLine(C, D, E, F)
+ EndIf
+C = E
+D = F
+EndSub
+

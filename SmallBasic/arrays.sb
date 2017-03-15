@@ -1,0 +1,115 @@
+ TextWindow.Write("Enter the name for User 1: ")
+User_1_Name = TextWindow.Read()
+TextWindow.Write("How old is User 1?: ")
+User_1_Age = TextWindow.Read()
+TextWindow.Write("Enter the name for User 2: ")
+User_2_Name = TextWindow.Read()
+TextWindow.Write("How old is User 2?: ")
+User_2_Age = TextWindow.Read()
+TextWindow.Write("Enter the name for User 3: ")
+User_3_Name = TextWindow.Read()
+TextWindow.Write("How old is User 3?: ")
+User_3_Age = TextWindow.Read()
+TextWindow.Write("Enter the name for User 4: ")
+User_4_Name = TextWindow.Read()
+TextWindow.Write("How old is User 4?: ")
+User_4_Age = TextWindow.Read()
+TextWindow.Write("Greetings Users! ")
+TextWindow.Write(User_1_Name + ", you are " + User_1_Age + " years old! ")
+TextWindow.Write(User_2_Name + ", you are " + User_2_Age + " years old! ")
+TextWindow.Write(User_3_Name + ", you are " + User_3_Age + " years old! ")
+TextWindow.Write(User_4_Name + ", you are " + User_4_Age + " years old! ")
+
+For A = 1 To 4
+ TextWindow.WriteLine("Please enter the name for User " + A + ":")
+ Name[A] = TextWindow.Read()
+EndFor
+For B = 1 To 4
+ TextWindow.WriteLine("What is User " + B + "'s age?:")
+ Age[B] = TextWindow.Read()
+EndFor
+TextWindow.Write("Hello ")
+For A = 1 To 4
+ TextWindow.Write(Name[A])
+ If A < 3 Then
+ TextWindow.Write(", ")
+ ElseIf A < 4 Then
+ TextWindow.Write(" and ")
+ EndIf
+EndFor
+TextWindow.Write(". You are ")
+For B = 1 To 4
+ TextWindow.Write(Age[B])
+ If B < 3 Then
+ TextWindow.Write(", ")
+ ElseIf B < 4 Then
+ TextWindow.Write(" and ")
+ Else
+ TextWindow.Write(" respectively.")
+ EndIf
+EndFor
+TextWindow.WriteLine("")
+
+TextWindow.Write("What is your name?: ")
+Input["Name"] = TextWindow.Read()
+TextWindow.Write("How tall are you?: ")
+Input["Height"] = TextWindow.Read()
+TextWindow.Write("What year were you born?: ")
+Input["Birth_year"] = TextWindow.Read()
+TextWindow.Write("What is your favorite color?: ")
+Input["Color"] = TextWindow.Read()
+TextWindow.Write("What country were you born in?: ")
+Input["Country"] = TextWindow.Read()
+TextWindow.Write("Please type one of the following to pull relevant data: Name, Height,Birth_year, Color or Country. ")
+Index = TextWindow.Read()
+TextWindow.WriteLine("The " + Index + " you entered is " + Input[Index] + "!")
+
+'this was my own attempt at a 1 dimensional array
+For A = 1 To 3
+ TextWindow.WriteLine("Please enter the name for User " + A + ":")
+ Name[A] = TextWindow.Read()
+EndFor
+For A = 1 To 3
+ TextWindow.WriteLine("How many pets does User " + A + "have:")
+Pet[A] = TextWindow.Read()
+EndFor
+  For A = 1 To 3
+ TextWindow.WriteLine("What is the name of user " + A + " pet:")
+ petname[A] = TextWindow.Read()
+EndFor
+
+TextWindow.Write("Hello ")
+For A = 1 To 3
+ TextWindow.Write(Name[A])
+ If A < 2 Then
+ TextWindow.Write(", ")
+ ElseIf A < 3 Then
+ TextWindow.Write(" and ")
+ EndIf
+EndFor
+
+TextWindow.Write(". You have ")
+For B = 1 To 3
+ TextWindow.Write(Pet[B])
+ If B < 2 Then
+ TextWindow.Write(", ")
+ ElseIf B < 3 Then
+ TextWindow.Write(" and ")
+ Else
+ TextWindow.Write(" pets respectively.")
+ EndIf
+EndFor
+
+For B = 1 To 3
+ TextWindow.Write(Petname[B])
+ If B < 2 Then
+ TextWindow.Write(", ")
+ ElseIf B < 3 Then
+ TextWindow.Write(" and ")
+ Else
+ TextWindow.Write(" respectively.")
+ EndIf
+EndFor
+TextWindow.WriteLine("")
+
+  

@@ -1,0 +1,63 @@
+TextWindow.Write("Type a number: ")
+Number_1 = TextWindow.ReadNumber()
+TextWindow.Write("Type another number: ")
+Number_2 = TextWindow.ReadNumber()
+TextWindow.Write("Let's type another number: ")
+Number_3 = TextWindow.ReadNumber()
+TextWindow.Write("And one last number: ")
+Number_4 = TextWindow.ReadNumber()
+Largest_Number()
+TextWindow.WriteLine("The largest number is: " + Largest_Number)
+Sub Largest_Number
+ If (Number_1 > Number_2 + Number_3 + Number_4) Then
+ Largest_Number = Number_1
+ ElseIf (Number_2 > Number_1 + Number_3 + Number_4) Then
+ Largest_Number = Number_2
+ ElseIf (Number_3 > Number_1 + Number_2 + Number_4) Then
+ Largest_Number = Number_3
+ Else
+ Largest_Number = Number_4
+ EndIf
+EndSub
+
+TextWindow.BackgroundColor="darkred"
+TextWindow.Write("Dit is een programme waarin u magt uit diverse geluiden dat u wilt luisteren kiesen. U magt drie keer kiesen!")
+Sound()
+Sub sound
+  start:
+  TextWindow.Write("Om een bel te horen, type Bel. Om een klokkenspel to horen, type Chime. Om een klick te horen, type Click")
+  sound_choice= TextWindow.Read()
+  If sound_choice= "Bell" Then
+    Sound.PlayBellRing()
+ ElseIf Sound_Choice = "Chime" Then
+ Sound.PlayChime()
+ ElseIf Sound_Choice = "Click" Then
+ Sound.PlayClick()
+ Else
+ TextWindow.Write("Aylstublieft, type Chime, Bell or Click.")
+ Goto Start
+ EndIf
+EndSub
+Sound()
+Sound()
+
+TextWindow.BackgroundColor="white"
+TextWindow.Write("Welke kleur wil je zien? Je mag gewoon uit drie klueren kiesen: blauw, geel of rood!")
+color()
+Sub color
+  start:
+  TextWindow.Write("De kleur zou op jour scherpje verschijnen.")
+  color_choice= TextWindow.Read()
+  If color_choice= "blauw" Then
+    TextWindow.BackgroundColor= "blue"
+ ElseIf color_choice = "geel" Then
+ TextWindow.BackgroundColor="yellow"
+ ElseIf color_choice = "rood" Then
+TextWindow.BackgroundColor="red"
+ Else
+ TextWindow.Write("Aylstublieft, type nu jouw uitgekozen kleur.")
+ Goto Start
+ EndIf
+EndSub
+color()
+color()

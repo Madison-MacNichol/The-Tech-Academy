@@ -1,0 +1,113 @@
+GraphicsWindow.BackgroundColor = "LightCyan"
+GraphicsWindow.PenColor = "DarkSlateBlue"
+GraphicsWindow.Width = 400
+GraphicsWindow.Height = 400
+For A = 1 To 200 Step 6
+ GraphicsWindow.DrawRectangle(200 - A, 200 - A, A * 2, A * 2)
+ Program.Delay(100)
+ EndFor
+For A = 1 To 200 Step 6
+ GraphicsWindow.DrawEllipse(200 - A, 200 - A, A * 2, A *2)
+ Program.Delay(100)
+EndFor
+
+GraphicsWindow.Width = 1000
+GraphicsWindow.Height = 650
+GraphicsWindow.BackgroundColor = "Black"
+A = 1000
+B = 1000
+For C = 1 To 100000
+ D = Math.GetRandomNumber(3)
+ E = 500
+ Program.Delay(.1)
+ F = 30
+ If (D = 1) then
+ E = 30
+ Program.Delay(.1)
+ F = 1000
+ EndIf
+ If (D = 2) Then
+ E = 1000
+ F = 1000
+ Program.Delay(.1)
+ EndIf
+ A = (A + E) / 2
+ Program.Delay(.1)
+ B = (B + F) / 2
+ Random_Color = GraphicsWindow.GetRandomColor()
+ GraphicsWindow.SetPixel(A, B, Random_Color)
+EndFor
+
+GraphicsWindow.Title = "America!"
+GraphicsWindow.Width = 1000
+GraphicsWindow.Height = 600
+For A = 1 To 100000
+ GraphicsWindow.BrushColor = "Red"
+ B = Math.GetRandomNumber(1000)
+ C = Math.GetRandomNumber(1000)
+ GraphicsWindow.FillEllipse(B, C, 4, 4)
+EndFor
+For D = 1 To 100000
+ GraphicsWindow.BrushColor = "Blue"
+ B = Math.GetRandomNumber(500)
+ C = Math.GetRandomNumber(275)
+ GraphicsWindow.FillEllipse(B, C, 4, 4)
+EndFor
+  
+  GraphicsWindow.Width = 275
+Turtle.X = 130
+Turtle.Y = 400
+GraphicsWindow.PenColor = "Green"
+Turtle.Move(150)
+Turtle.X = 135
+Turtle.Y = 400
+GraphicsWindow.PenColor = "Green"
+Turtle.Move(150)
+Turtle.X = 100
+Turtle.Y = 200
+GraphicsWindow.PenColor = "MediumVioletRed"
+Turns = 200
+Length = 300 / Turns
+Angle = 400 / Turns
+Turtle.Speed = 10
+For A = 1 To 6
+ For B = 1 To Turns
+ Turtle.Move(Length)
+ Turtle.Turn(Angle)
+ EndFor
+ Turtle.Turn(18)
+EndFor
+Turtle.X = 128.5
+Turtle.Y = 193
+
+GraphicsWindow.BackgroundColor = "DarkBlue"
+GraphicsWindow.Height = 600
+GraphicsWindow.Width = 605
+Rows = 10
+Columns = 10
+Sides = 50
+For A = 1 To Columns
+ For B = 1 To Rows
+ GraphicsWindow.BrushColor = GraphicsWindow.GetRandomColor()
+ Squares[A][B] = Shapes.AddRectangle(Sides, Sides)
+ Shapes.Move(Squares[A][B], A * Sides, B * Sides)
+ EndFor
+EndFor
+For A = 1 To Columns
+ For B = 1 To Rows
+ Shapes.Animate(Squares[B][A], 300, 0, 1000)
+ Program.Delay(50)
+ EndFor
+EndFor
+For A = 1 To Columns
+ For B = 1 To Rows
+ Shapes.Animate(Squares[B][A], 288, 500, 1000)
+ Program.Delay(10)
+ EndFor
+EndFor
+For A = 1 To Columns
+ For B = 1 To Rows
+ Shapes.Animate(Squares[B][A], 275, 250, 1000)
+ Program.Delay(10)
+ EndFor
+EndFor

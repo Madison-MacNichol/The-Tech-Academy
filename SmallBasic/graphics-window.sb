@@ -30,3 +30,48 @@ GraphicsWindow.PenColor = "Yellow"
 GraphicsWindow.DrawLine(450,10,450,450)
 GraphicsWindow.PenWidth = 40
 GraphicsWindow.PenColor = "Green"
+
+GraphicsWindow.Title="Groeiende lijnen"
+GraphicsWindow.Height= 500
+GraphicsWindow.Width= 500
+GraphicsWindow.PenColor="red"
+GraphicsWindow.BackgroundColor="blue"
+For a =1 To 15
+  GraphicsWindow.PenWidth= a
+  GraphicsWindow.DrawLine(20, a*20, 400, a*20)
+EndFor
+
+GraphicsWindow.SetPixel(20,20, "black")
+
+GraphicsWindow.DrawBoundText(70, 70, 150, "John")
+GraphicsWindow.DrawBoundText(120, 70, 150, "Sally")
+GraphicsWindow.DrawBoundText(180, 70, 150, "Bill")
+GraphicsWindow.DrawBoundText(250, 70, 150, "Jessica")
+GraphicsWindow.DrawBoundText(70, 120, 150, "John")
+GraphicsWindow.DrawBoundText(120, 120, 150, "Sally")
+GraphicsWindow.DrawBoundText(180, 120, 150, "Bill")
+GraphicsWindow.DrawBoundText(250, 120, 150, "Jessica")
+
+
+GraphicsWindow.Height=500
+GraphicsWindow.Width=700
+GraphicsWindow.BackgroundColor="Pink"
+GraphicsWindow.DrawLine(10,200,200,10)
+GraphicsWindow.DrawLine(10,10,200,200)
+GraphicsWindow.DrawLine(10,10,10,200)
+GraphicsWindow.DrawLine(200,10,200,200)
+GraphicsWindow.PenWidth= 60
+GraphicsWindow.PenColor="red"
+GraphicsWindow.SetPixel(300,300, "black")
+GraphicsWindow.FontItalic="true"
+GraphicsWindow.FontSize=16
+GraphicsWindow.DrawBoundText(70, 400, 400, "zestien")
+GraphicsWindow.FontItalic="true"
+GraphicsWindow.FontSize=30
+GraphicsWindow.DrawBoundText(120, 70, 150, "dertig")
+GraphicsWindow.FontItalic="true"
+GraphicsWindow.FontSize=25
+GraphicsWindow.DrawBoundText(180, 250, 400, "vijfentwintig")
+GraphicsWindow.FontItalic="true"
+GraphicsWindow.FontSize=10
+GraphicsWindow.DrawBoundText(250, 70, 150, "tien")

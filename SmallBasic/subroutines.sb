@@ -1,0 +1,9 @@
+TextWindow.Write("Wat is jouw naam?")
+naam= TextWindow.Read()
+TextWindow.Write("Hoi," +naam+ "! Wat voor tijd heb je?")
+tijd= TextWindow.Read()
+TextWindow.Write("Nee" +naam+ "jouw computer toont de juiste tijd:")
+PrintTime()
+Sub PrintTime
+  TextWindow.WriteLine(Clock.Time)
+  EndSub

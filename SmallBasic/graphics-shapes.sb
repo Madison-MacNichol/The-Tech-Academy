@@ -1,0 +1,33 @@
+GraphicsWindow.BrushColor="green"
+GraphicsWindow.FillTriangle(300,150,150,300,450,300)
+
+GraphicsWindow.Width = 300
+GraphicsWindow.Height = 300
+GraphicsWindow.BackgroundColor = "Black"
+GraphicsWindow.PenColor = "Yellow"
+GraphicsWindow.PenWidth = 20
+GraphicsWindow.DrawEllipse(50, 50, 200, 200)
+
+GraphicsWindow.Width = 300
+GraphicsWindow.Height = 300
+GraphicsWindow.BackgroundColor = "Black"
+GraphicsWindow.BrushColor = "Yellow"
+GraphicsWindow.FillEllipse(50, 50, 200, 200)
+
+a=20
+b=50
+GraphicsWindow.FillEllipse(a,b,350,350)
+
+triangle= Shapes.AddTriangle(50, 100, 100, 50, 150, 100)
+Program.Delay(1000)
+Shapes.Animate(triangle,200,200,1000)
+
+GraphicsWindow.BrushColor="yellow"
+GraphicsWindow.DrawEllipse(200,200,400,400)
+GraphicsWindow.FillEllipse(200,200, 200, 200)
+GraphicsWindow.BrushColor="blue"
+GraphicsWindow.FillTriangle(300,150,150,300,450,300)
+GraphicsWindow.FillRectangle(50, 50, 200, 200)
+triangle= Shapes.AddTriangle(50, 100, 100, 50, 150, 100)
+Program.Delay(1000)
+Shapes.Animate(triangle,200,200,1000)

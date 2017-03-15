@@ -1,0 +1,61 @@
+Turtle.Show()
+
+Turtle.Move(50)
+Program.Delay(500)
+Turtle.Move(25)
+Program.Delay(500)
+Turtle.Move(75)
+Program.Delay(500)
+Turtle.Move(35)
+Program.Delay(500)
+
+Turtle.Angle = 45
+Turtle.Move(150)
+Turtle.Angle = 135
+Turtle.Move(150)
+Turtle.Angle = 270
+
+GraphicsWindow.BackgroundColor = "LightYellow"
+GraphicsWindow.PenColor = "Magenta"
+Turtle.Move(100)
+Turtle.TurnRight()
+Turtle.Move(200)
+Turtle.TurnRight()
+Turtle.Move(100)
+Turtle.TurnRight()
+Turtle.Move(200)
+
+'this is an octagon
+For x = 1 To 8
+  Turtle.Move(75)
+  Turtle.Turn(45)
+EndFor 
+
+Turtle.X = 20
+Turtle.Y = 200
+Sides = 200
+Angle = 360 / Sides
+Size = 1000 / Sides
+For A = 1 To Sides
+ GraphicsWindow.PenColor = GraphicsWindow.GetRandomColor()
+ GraphicsWindow.BackgroundColor = GraphicsWindow.GetRandomColor()
+ Turtle.Move(Size)
+ Turtle.Turn(Angle)
+EndFor
+
+GraphicsWindow.BackgroundColor = "pink"
+GraphicsWindow.PenColor = "Magenta"
+For X = 1 To 4
+ Turtle.Move(75)
+ Turtle.Turn(90)
+EndFor
+
+Turtle.Show()
+Turtle.Move(50)
+Turtle.TurnRight()
+Turtle.Move(75)
+Turtle.TurnLeft()
+Turtle.Angle=20
+Turtle.Move(20)
+Turtle.MoveTo(10,200)
+
