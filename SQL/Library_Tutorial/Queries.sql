@@ -29,7 +29,14 @@ WHERE (Library_Branch.BranchID=1
 OR Library_Branch.BranchID=2 
 OR Library_Branch.BranchID=3 
 OR Library_Branch.BranchID=4)
-AND Book.BookID=1
+AND Book.Title='The Lost Tribe'
+
+OR
+
+SELECT B.BookId, B.Title, BC.BranchId, BC.No_of_Copies
+FROM Book AS B INNER JOIN Book_Copies AS BC
+ON B.BookId=BC.BookId
+WHERE Title='The Lost Tribe'
 
 /*A: There are 5 copies at branch 2, 3 copies at branch 3, 8 copies at branch 4 and 4 copies at branch 1.*/
 
@@ -57,13 +64,13 @@ FROM Book_Loans
 SELECT* 
 FROM Book
 
-SELECT Book.Title, Borrower.Name, Borrower.[Address]
+SELECT Book.Title, Borrower.Name, Borrower.[Address], DueDate, BranchId
 FROM Book INNER JOIN Book_Loans
 ON Book.BookID=Book_Loans.BookID
 INNER JOIN Borrower
 ON Book_Loans.CardNo=Borrower.CardNo
 WHERE (Book_Loans.BranchID=1) 
-AND Book_Loans.DueDate='2017-03-22'
+AND Book_Loans.DueDate='2017-10-21'
 
 
 /*A: There are no books from the Sharptown branch due today from any borrower*/
