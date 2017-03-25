@@ -1,3 +1,8 @@
+var lang = "JavaScript"
+
 function myFunction() {
-                document.getElementById("demo").innerHTML="Hello World";
-            }
+    this.lang = lang;
+    console.log("Hello, welcome to" + this.lang)
+};
+var Test = new myFunction
+
