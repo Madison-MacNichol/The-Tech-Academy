@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+    <head> 
+        <style>button{font-size: 1.5em;front-weight: bold;height: 75px;width: 100px;}
+        </style>
+    </head>
+    
+<body>
+    <h1 id="countdown">Click for button colors!</h1>
+<br><br>
+    <button class="button" onclick="up()">Start!</button>
+    
+    
+    <script>
+        
+        //these are ways to target objects
+//document.getElementById()
+//document.getElementsByClassName()
+//document.getElementsByName()
+//document.getElementsByTagName()
+        
+        var i=0;
+        var myArray = [10,9,8,7,6,5,4,3,2,1,"Happy New Year!!"];
+        function up() {
+            if (i < myArray.length){
+                document.getElementById('countdown').style.color = "red";
+                document.getElementById('countdown').innerHTML = myArray[i];
+                i++
+            }
+        window.setTimeout(up,250);
+        };
+        
+    </script>
+    
+    
+</body>
+</html>

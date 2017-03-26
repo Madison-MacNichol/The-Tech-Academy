@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <style>
+            div{color: white;font-size: 1.5em;fort-weight:bold; 
+                text-align: center;height: 100px;width: 300px;background-color: green;}
+            button{font-size: 1.5em;front-weight: bold;height: 75px;width: 100px;}
+        </style>
+        
+    </head>
+    
+<body>
+    <h1 id="countdown">Click for button colors!</h1>
+        <div>Green</div><br>
+        <div>Green</div><br>
+        <div>Green</div><br>
+        <div>Green</div><br>
+        <div>Green</div><br><br>
+    <button class="btn" onclick="up()">Red!</button>
+    <button class="btn" onclick="down()">Blue!</button>
+    
+    
+    <script>
+        
+        //these are ways to target objects
+//document.getElementById()
+//document.getElementsByClassName()
+//document.getElementsByName()
+//document.getElementsByTagName()
+        
+        var i=0;
+        var j=0;
+        var divs = document.getElementsByTagName('div');
+        var btns = document.getElementsByClassName('btn');
+        function up(){
+            if (1 < divs.length) {
+                divs[i].style.backgroundColor = "red";
+                divs[i].innerHTML = "red";
+                btns[0].innerHTML = "done";
+                i++;
+            }
+            window.setTimeout(up,150);
+            
+        };
+        
+        function down() {
+            if(j <  divs.length) {
+                divs[j].style.backgroundColor = "blue";
+                divs[j].innerHTML = "blue";
+                btns[1].innerHTML = "done"
+                j++;
+            }
+            window.setTimeout(down,150);
+        };
+        
+    </script>
+    
+    
+</body>
+</html>
