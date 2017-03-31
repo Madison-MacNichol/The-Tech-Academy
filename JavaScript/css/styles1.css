@@ -1,0 +1,13 @@
+.navbar-default {
+    border: none;
+}
+
+header {
+    background: url('../images/Charlie-Chihuahua.jpg') center center no-repeat;
+    height: 600px;
+}
+
+navbar-default {
+    width: 100%;
+    z-index: 100;
+}
