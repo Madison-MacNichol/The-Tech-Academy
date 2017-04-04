@@ -2,94 +2,93 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta content="width=device-width,initial-scale=1.0" name="viewport">
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="pizza_menu.css">
     <title>Pizza Menu</title>
 </head>
 
 <body>
-<div class="content container">
+    
+<div id="menuBG">
     <h1>Tell Us What You'd Like!</h1>
+			<input id="btnOrder" type="button" onclick="getReceipt()" 
+				value="Place Order">
     
-<div class="container" id="size">
-    <h3>Size</h3>
-        <ul>
-        <li>Personal</li>
-        <li>Medium</li>
-        <li>Large</li>
-        <li>Extra Large</li>
-    </ul>
-</div>
-    
-<div class="container" id="meat">
-    <h3>Meat</h3>
-        <ul>
-        <li>Pepperoni</li>
-        <li>Sausage</li>
-        <li>Canadian Bacon</li>
-        <li>Ground Beef</li>
-        <li>Anchovy</li>
-        <li>Shredded Chicken</li>
-    </ul>
-</div>
-    
-<div class="container" id="veggies">
-    <h3>Veggies</h3>
-        <ul>
-        <li>Tomatoes</li>
-        <li>Onions</li>
-        <li>Olives</li>
-        <li>Green Peppers</li>
-        <li>Mushrooms</li>
-        <li>Spinach</li>
-        <li>Corn</li>
-        <li>Pineapple</li>
-        <li>Strawberries</li>
-        <li>Banana</li>
-    </ul>
-</div>
-    
-<div class="container" id="cheese">
-    <h3>Cheese</h3>
-        <ul>
-        <li>Regualar</li>
-        <li>Extra</li>
-        <li>Cashew</li>
-        <li>None</li>
+<form id="frmMenu">    
+    <div class="menu left" id="size">
+        <h3>Size</h3>
+            <input class="size" type="radio" name="Size" value="Kids">Kids<br>
+            <input class="size" type="radio" name="Size" value="Personal">Personal<br>
+            <input class="size" type="radio" name="Size" value="Medium">Medium<br>
+            <input class="size" type="radio" name="Size" value="Large">Large<br>
+            <input class="size" type="radio" name="Size" value="XL">XL<br>
+    </div>
 
-    </ul>
-</div>
+    <div class="menu left" id="meat">
+        <h3>Meat</h3>
+            <input class="meats" type="checkbox" name="Meat" value="Pepperoni"> Pepperoni<br>
+            <input class="meats" type="checkbox" name="Meat" value="Sausage"> Sausage<br>
+            <input class="meats" type="checkbox" name="Meat" value="Canadian Bacon"> Canadian Bacon<br>
+            <input class="meats" type="checkbox" name="Meat" value="Ground Beef"> Ground Beef<br>
+            <input class="meats" type="checkbox" name="Meat" value="Anchovy"> Anchovey<br>
+            <input class="meats" type="checkbox" name="Meat" value="Shredded Chicken"> Shredded Chicken<br>
+            <input class="meats" type="checkbox" name="Meat" value="Tofurkey">Tofurkey<br>
+
+    </div>
+
+    <div class="menu left" id="veggies">
+        <h3>Veggies</h3>
+            <input class="veggies" type="checkbox" name="Veggie" value="Tomato">Tomato<br>
+            <input class="veggies" type="checkbox" name="Veggie" value="Onions">Onions<br>
+            <input class="veggies" type="checkbox" name="Veggie" value="Green Pepper">Green Peppers<br>
+            <input class="veggies" type="checkbox" name="Veggie" value="Mushrooms">Mushrooms<br>
+            <input class="veggies" type="checkbox" name="Veggie" value="Spinach">Spinach<br>
+            <input class="veggies" type="checkbox" name="Veggie" value="Olives">Olives<br>
+            <input class="veggies" type="checkbox" name="Veggie" value="Corn">Corn<br>
+            <input class="veggies" type="checkbox" name="Veggie" value="Pineapple">Pineapple<br>
+            <input class="veggies" type="checkbox" name="Veggie" value="Strawberries">Strawberries<br>
+            <input class="veggies" type="checkbox" name="Veggie" value="Banana">Banana<br>
+    </div>
+
+    <div class="menu right" id="cheese">
+        <h3>Cheese</h3>
+            <input class="cheese" type="radio" name="Cheese" value="Regular">Regular<br>
+            <input class="cheese" type="radio" name="Cheese" value="Extra">Extra<br>
+            <input class="cheese" type="radio" name="Cheese" value="None">None<br>
+    </div>
+
+    <div class="menu right" id="sauce">
+        <h3>Sauce</h3>
+            <input class="sauce" type="radio" name="Sauce" value="Marinara">Marinara<br>
+            <input class="sauce" type="radio" name="Sauce" value="White">White<br>
+            <input class="sauce" type="radio" name="Sauce" value="BBQ">BBQ<br>
+            <input class="sauce" type="radio" name="Sauce" value="Nutella">Nutella<br>
+            <input class="sauce" type="radio" name="Sauce" value="Whippedcream">Whipped Cream<br>
+            <input class="sauce" type="radio" name="Sauce" value="None">None<br>
+    </div>
+
+    <div class="menu right" id="crust">
+        <h3>Crust</h3>
+            <input class="crust" type="radio" name="Crust" value="Plain">Plain<br>
+            <input class="crust" type="radio" name="Crust" value="Garlicbutter">Garlic Butter<br>
+            <input class="crust" type="radio" name="Crust" value="Stuffed">Stuffed<br>
+            <input class="crust" type="radio" name="Crust" value="Spicey">Spicey<br>
+            <input class="crust" type="radio" name="Crust" value="Cinnimon">Cinnimon<br>
+            <input class="crust" type="radio" name="Crust" value="Housespecial">House Special<br>
+    </div>
+
+    <div id="cart">
+        <div id="showText"></div>
+        <div id="totalPrice"></div>
+    </div>
     
-<div class="container" id="sauce">
-    <h3>Sauce</h3>
-        <ul>
-        <li>Marinara</li>
-        <li>White</li>
-        <li>BBQ</li>
-        <li>Nutella</li>
-        <li>Whipped Cream</li>
-        <li>None</li>
-    </ul>
-</div>
+</form>
     
-<div class="container" id="crust">
-    <h3>Crust</h3>
-        <ul>
-        <li>Plain</li>
-        <li>Garlic Butter</li>
-        <li>Stuffed</li>
-        <li>Spicey</li>
-        <li>Cinnimon</li>
-        <li>House Special</li>
-    </ul>
-</div>
-    
-    </div> <!--content container-->
+</div> <!--content container-->
     
 
-    
     
 <script src="jquery-3.2.0.js"></script>
 <script src="bootstrap.min.js"></script>
