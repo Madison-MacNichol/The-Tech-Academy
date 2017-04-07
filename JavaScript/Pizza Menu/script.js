@@ -1,7 +1,8 @@
 /********SIZE*********/
 
 function getReceipt() {
-    var text1="<h3>You Ordered<h3>";
+    var text1="<h3>You Ordered: <h3>";
+    var text2=""
     var runningTotal= 0;
     var sizeTotal= 0;
     var sizeArray= document.getElementsByClassName("size");
@@ -26,12 +27,17 @@ if (selectedSize === "Kids") {
 }
 
 runningTotal = sizeTotal; //this is the first step to building out size total
-getMeat(runningTotal,text1); //this passes the selected variables to the next function
+    text2 = sizeTotal
+console.log(runningTotal)
+document.getElementById("showText").innerHTML=text1;
+document.getElementById("showText2").innerHTML=text2;
+document.getElementById("totalPrice").innerHTML = "<h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
+getMeat(runningTotal,text1,text2); //this passes the selected variables to the next function
 };
 
 /********MEAT*********/
 
-function getMeat(runningTotal,text1) {
+function getMeat(runningTotal,text1,text2) {
     var meatTotal = 0;
     var selectedMeat = [];
     var meatArray = document.getElementsByClassName("meats");
@@ -51,15 +57,18 @@ var meatCount = selectedMeat.length;
     }
 
 runningTotal = (runningTotal + meatTotal);
+    text2 = (String(text2) +"<br>"+ String(meatTotal));
+console.log(runningTotal)
 document.getElementById("showText").innerHTML=text1;
-document.getElementById("totalPrice").innerHTML = "<h3>Total <strong>$"+runningTotal+".00"+"</strong></h3>";
-getVeggies(runningTotal,text1); //this passes the selected variables to the next function
+document.getElementById("showText2").innerHTML=text2;
+document.getElementById("totalPrice").innerHTML = "<h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
+getVeggies(runningTotal,text1,text2); //this passes the selected variables to the next function
 
 };
 
 /********VEGGIES*********/
 
-function getVeggies (runningTotal,text1) {
+function getVeggies (runningTotal,text1,text2) {
     var veggieTotal = 0;
     var selectedVeggie = [];
     var veggieArray = document.getElementsByClassName("veggies");
@@ -79,15 +88,17 @@ var veggieCount = selectedVeggie.length;
     }
     
 runningTotal = (runningTotal + veggieTotal);
+    text2 = (String(text2) + "<br>" + String(veggieTotal));
+console.log(runningTotal);
 document.getElementById("showText").innerHTML=text1;
-document.getElementById("totalPrice").innerHTML = "<h3>Total <strong>$"+runningTotal+".00"+"</strong></h3>"; 
-getCheese(runningTotal,text1);
+document.getElementById("showText2").innerHTML=text2;
+document.getElementById("totalPrice").innerHTML = "<h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>"; 
+getCheese(runningTotal,text1,text2);
 }; 
 
 /********CHEESE*********/
 
-function getCheese (runningTotal,text1) { 
-    var runningTotal = 0;
+function getCheese (runningTotal,text1,text2) { 
     var cheeseTotal = 0;
     var cheeseArray = document.getElementsByClassName("cheese");
 
@@ -107,16 +118,18 @@ if (selectedCheese === "Extra") {
 }
 
 runningTotal = (runningTotal + cheeseTotal);
+    text2 = (String(text2) + "<br>" + String(cheeseTotal));
+console.log(runningTotal);
 document.getElementById("showText").innerHTML=text1;
-document.getElementById("totalPrice").innerHTML = "<h3>Total <strong>$"+runningTotal+".00"+"</strong></h3>"; 
-getSauce(runningTotal,text1);
+document.getElementById("showText2").innerHTML=text2;
+document.getElementById("totalPrice").innerHTML = "<h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>"; 
+getSauce(runningTotal,text1,text2);
 
 };
 
 /********SAUCE*********/
 
-function getSauce (runningTotal,text1) {
-    var runningTotal = 0;
+function getSauce (runningTotal,text1,text2) {
     var sauceTotal = 0;
     var sauceArray = document.getElementsByClassName("sauce");
 
@@ -128,16 +141,18 @@ for (var m = 0; m < sauceArray.length; m++) {
 }
 
 runningTotal = (runningTotal + sauceTotal);
+    text2 = (String(text2) + "<br>" + String(sauceTotal));
+console.log(runningTotal);
 document.getElementById("showText").innerHTML=text1;
-document.getElementById("totalPrice").innerHTML = "<h3>Total <strong>$"+runningTotal+".00"+"</strong></h3>"; 
-getCrust(runningTotal,text1);
+document.getElementById("showText2").innerHTML=text2;
+document.getElementById("totalPrice").innerHTML = "<h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>"; 
+getCrust(runningTotal,text1,text2);
     
 };
 
 /********CRUST*********/
 
-function getCrust (runningTotal,text1) { 
-    var runningTotal = 0;
+function getCrust (runningTotal,text1,text2) { 
     var crustTotal = 0;
     var crustArray = document.getElementsByClassName("crust");
 
@@ -163,8 +178,11 @@ if (selectedCrust === "Extra") {
 }
     
 runningTotal = (runningTotal + crustTotal);
+    text2 = (String(text2) + "<br>" + String(crustTotal));
+console.log(runningTotal);
 document.getElementById("showText").innerHTML=text1;
-document.getElementById("totalPrice").innerHTML = "<h3>Total <strong>$"+runningTotal+".00"+"</strong></h3>"; 
+document.getElementById("showText2").innerHTML=text2;
+document.getElementById("totalPrice").innerHTML = "<h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>"; 
 
 };
 

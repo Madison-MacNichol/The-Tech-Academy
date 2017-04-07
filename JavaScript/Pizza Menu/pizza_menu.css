@@ -1,12 +1,21 @@
 body {
-    background-color: darkgrey;
-    background-position: center;
+    background-color: white;
+    background-position: left;
+    background-image: url("pizza.jpg");
+    background-repeat: repeat-y;
+    font-family: serif;
+    font-style: normal;
+    color: black;
 }
 
 #menuBG {
     width:400px;
-    height:470px;
+    height:500px;
     margin:10px auto;
+}
+
+.title {
+    font-weight: bold;
 }
 
 #frmMenu {
@@ -16,9 +25,17 @@ body {
 
 #totalPrice {
     width:200px;
-    height:190px;
+    height:50px;
     margin:0 auto;
-    float:right;
+    float:left;
+}
+
+#showText2 {
+    width:200px;
+    height:200px;
+    margin:0 auto;
+    /*float: right;*/
+    font-size: x-large;
 }
 
 .left {
@@ -26,8 +43,34 @@ body {
     height:200px;
     float:left;
 }
-		.right{width:200px;height:200px;float:right;}#showText{width:200px;height:190px;margin:0px auto;float:left;}
-		#cart{top:0;margin:0px auto;width:400px;height:200px;}#btnOrder{margin:10px 0px 0px 100px;width:100px;height:40px}
-		</style>
+
+
+.right {
+    width:200px;
+    height:200px;
+    float:right;
+}
+
+#veggies {
+    height: 300px;
+}
+
+#showText {
+    width:200px;
+    height:350px;
+    margin:0px auto;
+    /*float: left;*/
+}
+
+#cart {
+    top:0;
+    margin:0px auto;
+    width:200px;
+    height:200px;
+}
+#btnOrder {
+    margin:10px 0px 0px 100px;
+    width:100px;
+    height:40px}
 
 h1 style="margin:0 0px 0 20px;"
