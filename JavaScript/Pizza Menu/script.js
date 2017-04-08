@@ -163,7 +163,7 @@ for (var p = 0; p < crustArray.length; p++) {
         }
 }
 
-if (selectedCrust === "Extra") {
+if (selectedCrust === "Stuffed") {
     crustTotal = 3;
 } else if (selectedCrust === "Plain") {
     crustTotal = 0;
