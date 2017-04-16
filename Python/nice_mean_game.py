@@ -48,7 +48,7 @@ def nice_mean(nice,mean,name):
     score(nice,mean,name) #this passes three variables to the score()
 
 def show_score(nice,mean,name):
-    print ("\n{}, you currently have({}, Nice) and ({}, Mean) points.".format(nice,mean,name))
+    print ("\n{}, you currently have({}, Nice) and ({}, Mean) points.".format(name,nice,mean))
          
 
 def score(nice,mean,name):
@@ -59,7 +59,35 @@ def score(nice,mean,name):
         lose(nice,mean,name)
     else: #if neither win nor lose, call nice_mean function again
         nice_mean(nice,mean,name)
-        
+
+def win(nice,mean,name):
+    print("\nNice job {}, you win! \nEveryone loves you and the world is good to you!".format(name))
+    again(nice,mean,name) #this calls the again function & pass it our variables
+
+def lose(nice,mean,name):
+    print ("\nToo bad, game over! \n{}, you live in a van by the river, sad and alone!".format(name))
+    again(nice,mean,name)
+
+def again(nice,mean,name):
+    stop = True
+    while stop:
+        choice = raw_input("\nDo you want to play again? y/n: ").lower()
+        if choice == "y":
+            stop = False
+            reset (nice,mean,name)
+        if choice == "n":
+            print ("\nSee you later alligator!")
+            stop = False
+            exit()
+        else:
+            print("\nPlease enter 'y' for YES or 'n' for NO...")
+
+            
+def reset(nice,mean,name):
+    nice = 0
+    mean = 0
+    start(nice,mean,name)
+    
     
 
 
