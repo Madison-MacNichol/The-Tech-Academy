@@ -1,23 +1,35 @@
 epic_programmer_dict = {
-    'Madi Mac' : ['madimac@gmail.com', 111],
-    'Diana Dee' : ['dd@yahoo.com', 222],
-    'Beau Delouve' : ['bdouv@hotmail.com', 333],
-    'Tyler Toots' : ['tyc@gmail.com', 444],
-    'Jordan Van' : ['jv@yahoo.com', 555]
+    'madi mac' : ['madimac@gmail.com', 111],
+    'diana dee' : ['dd@yahoo.com', 222],
+    'beau delouve' : ['bdouv@hotmail.com', 333],
+    'tyler toots' : ['tyc@gmail.com', 444],
+    'jordan van' : ['jv@yahoo.com', 555]
     }
 
-print epic_programmer_dict
+def searchPeople (personsName):
 
-personsName = raw_input('Please enter a name: ')
+    try:
+        personsInfo = epic_programmer_dict[personsName]
+        print 'Name: ' + personsName.title()
+        print 'Email: ' + personsInfo [0]
+        print 'Number: ' + str (personsInfo [1])
+    except: 
+        print 'No information found for that name!'
 
-print personsName
+userWantsMore = True
+while userWantsMore == True:
+    personsName = raw_input('Please enter a name: ').lower()
+    searchPeople(personsName)
+    userWantsMore = False
+    searchAgain = raw_input('Search again? (y/n)')
+    if searchAgain == 'y':
+        userWantsMore = True
+    elif searchAgain == 'n':
+        userWantsMore = False
+    else:
+        print 'I dont understand'
+        userWantsMore = False
+        
 
-personsInfo = epic_programmer_dict[personsName]
 
-print personsInfo
 
-try:
-    personsInfo = epic_programmer_dict[personsName]
-    print personsInfo
-except:
-    print 'No information found for that name!'
