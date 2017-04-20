@@ -88,7 +88,7 @@ def drinkChoice():
                 exit()
         
             
-drinkChoice()
+#drinkChoice()
 
 #for loop
 for x in range(13):
@@ -114,9 +114,9 @@ def myFamily():
     dad = 'doug'
     brother = 'neil'
     sister =  'none'
-    print 'My mom is '+mom+' and my dad is '+dad+ '.'
+    return 'My mom is '+mom+' and my dad is '+dad+ '.'
 
-myFamily()
+print (myFamily())
 
 
 
