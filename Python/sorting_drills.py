@@ -13,19 +13,27 @@ print (myList)
 
 
 #insertion sort method
-def madiNextSort(myNextList):
-    for num in range(1,len(myNextList)):
-        print (num)
-        currentvalue = myNextList[num]
-        print(currentvalue)
-        position = num
-        print(position)
-        while position>0 and myNextList[position-1]>currentvalue:
-            print(myNextList)
-            myNextList[position]=myNextList[position-1]
-            postion = position-1
-        myNextList[position]=currentvalue
+##def madiNextSort(myNextList):
+##    for num in range(1,len(myNextList)):
+##        print (num)
+##        currentvalue = myNextList[num]
+##        print(currentvalue)
+##        position = num
+##        print(position)
+##        while position>0 and myNextList[position-1]>currentvalue:
+##            print(myNextList)
+##            myNextList[position]=myNextList[position-1]
+##            postion = position-1
+##        myNextList[position]=currentvalue
+##
+##myNextList = [89, 23, 33, 45, 10, 12, 45, 45, 45]
+##madiNextSort(myNextList)
+##print(myNextList)
 
 myNextList = [89, 23, 33, 45, 10, 12, 45, 45, 45]
-madiNextSort(myNextList)
-print(myNextList)
+sortedList=[]
+for num in range(len(myNextList)):
+    s = min(myNextList)
+    sortedList.append(s)
+    myNextList.remove(s)
+print(sortedList)
