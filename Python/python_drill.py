@@ -51,9 +51,9 @@ def drinkChoice():
             print ("\nPlease go back to kindergarten you child!")
             stop = True
             choice2 = raw_input("\nDo you want something else? y/n: ").lower()
-            if choice == "y":
+            if choice2 == "y":
                 drinkChoice()
-            if choice == "n":
+            if choice2 == "n":
                 print ("\nLater Sucka!")
                 stop = False
                 exit()
@@ -61,9 +61,9 @@ def drinkChoice():
             print ("\nYeah ok sure you square. Pick up your water at the counter.")
             stop = True
             choice2 = raw_input("\nDo you want something else? y/n: ").lower()
-            if choice == "y":
+            if choice2 == "y":
                 drinkChoice()
-            if choice == "n":
+            if choice2 == "n":
                 print ("\nLater Sucka!")
                 stop = False
                 exit()
@@ -71,25 +71,24 @@ def drinkChoice():
             print ("\nThis is a childrens venue you drunk! Pull yourself together!")
             stop = True
             choice2 = raw_input("\nDo you want something else? y/n: ").lower()
-            if choice == "y":
+            if choice2 == "y":
                 drinkChoice()
-            if choice == "n":
+            if choice2 == "n":
                 print ("\nLater Sucka!")
                 stop = False
                 exit()
         else:
             print ("\nThere are only three choices you moron!")
             choice2 = raw_input("\nDo you want something else? y/n: ").lower()
-            if choice == "y":
+            if choice2 == "y":
                 drinkChoice()
-            if choice == "n":
+            if choice2 == "n":
                 print ("\nLater Sucka!")
                 stop = False
                 exit()
-                #why are my n coices not working?
         
             
-#drinkChoice()
+drinkChoice()
 
 #for loop
 for x in range(13):
@@ -103,8 +102,11 @@ for x in myList:
 
 #tuple list
 myTuple = ('apples','oranges','grapes','bananas','papayas')
-print myTuple
-#how to drop down to next line?
+print myTuple[0]
+print myTuple[1]
+print myTuple[2]
+print myTuple[3]
+print myTuple[4]
 
 #function returning a string
 def myFamily():
