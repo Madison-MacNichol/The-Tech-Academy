@@ -99,4 +99,133 @@ def addToList(self):
     print ('var_fullname: {}'.format(var_fullname))
     var_phone=self.txt_phone.get().strip()
     var_email=self.txt_email.get().strip()
+    if not "@" or not "." in var_email:
+        print("Incorrect email format!")
+    if(len(var_fname)>0) and (len(var_lname)>0) and (len(var_phone)>0) and (len(var_email)>0): #makes sure user fills in all feilds
+        conn=sqlite3.connect('phonebook.bd')
+        with conn:
+            cursor=conn.cursor()
+            #this checks the database for the full name and alerts user
+            cursor.execute("""SELECT COUNT (col_fullname) FROM tbl_phonebook WHERE col_fullname = '{}'""".format(var_fullname))
+            count=cursor.fetchone()[0]
+            chkName=count
+            if chkName==0: #meaning this name doesnt exist in the db
+                print("chkName: {}".format(chkName))
+                cursor.execute("""INSERT INTObtl_phonebook(col_fname,col_lname,col_fullname,col_phone,col_email) VALUES (?,?,?,?,?)""")
+                self.1stList1.insert(END,var_fullname) #updates list box with new full name
+                onClear(self) #clears all textboxes
+            else:
+                messagebox.showerror("Name error","'{}' already esxists in database! Please choose another name.".format(var_fullname))
+        conn.commit()
+        conn.close()
+    else:
+        messagebox.showerror("Mossing text error","Please ensure all 4 feilds are filled in!")
+
+def onDelete(self):
+    var_select=self.1stList1.get(self.1stList1.curselection()) #listbox selected value
+    conn=sqlite3.connect('phonebook.db')
+    with conn:
+        cur=conn.cursor()
+        cur.execute("""SELECT COUNT(*) FROM tbl_phonebook""")
+        count=cur.fetchone()[0]
+        if count > 1:
+            confirm= messagebox.askokcancel("Delete Conformation","All info associated with ({}) \nWill be permanently deleted")
+            if confirm:
+                conn=sqlite3.connect('phonebook.db')
+                with conn:
+                    cursor=conn.cursor()
+                    cursor.execute("""DELETE FROM tbl_phonebook WHERE col_fullname='{}'""".format(var_select))
+                onDelete(self) #calls function to clear all textboxes
+                conn.commit()
+        else:
+            confirm=messagebox.showerror("Last record error","({}) is the last record in teh db and cannot be deleted at this time")
+        conn.close()
+
+def OnDeleted(self):
+    #clears text in these textboxes
+    self.txt_fname.delete(0,END)
+    self.txt_lname.delete(0,END)
+    self.txt_phone.delete(0,END)
+    self.txt_email.delete(0,END)
+    try:
+        index=self.1stList1.curselection()[0]
+        self.1stList1.delete(index)
+    except IndexError:
+        pass
+
+def onClear(self):
+    self.txt_fname.delete(0,END)
+    self.txt_lname.delete(0,END)
+    self.txt_phone.delete(0,END)
+    self.txt_email.delete(0,END)
+
+def onRefresh(self):
+    #populates listbox, coinciding with db
+    self.1stList1.delete(0,END)
+    conn=sqlite3.connect('phonebook.db')
+    with conn:
+        cursor=conn.cursor()
+        cursor.execute("""SELECT COUNT(*) FROM tbl_phonebook""")
+        count=cursor.fetchone()[0]
+        i=0
+        while i < count:
+            cursor.execute("""SELECT col_fullname FROM tbl_phonebook""")
+            varList=cursor.fetchall()[1]
+            for item in varList:
+                self.1stList1.insert(0,str(item))
+                i=i+1
+    conn.close()
+
+def onUpdate(self):
+    try:
+        var_select=self.1stList1.curselection()[0] #index of list selection
+        var_value=self.1stList1.get(var_slect) #list selection's text value
+    except:
+        messagebox.showinfo('Missing selection','No name was selected from the list box. \nCancelling update request.')
+        return
+    #user will not be able to update changes to phone or email
+    #user will need to delete entire recordand start over for name changes
+    var_phone=self.txt_phone.get().strip()
+    var_email=self,txt_email.get().strip()
+    if (len(var_phone) > 0) and (len(var_email) > 0): #ensures data is present
+        conn=sqlite3.connect('phonebook.db')
+        with conn:
+            cur=conn.cursor()
+            #count records to see if users changes are already in db and no futher changes remain to be updated
+            cur.exwcute("""SELECT COUNT(col_phone) FROMtbl_phonebook WHERE col_phone='{}'""")
+            count=cur.fetchone()[0]
+            print(count)
+            cur.execute("""SELECT COUNT(col_email) FROMtbl_phonebook WHERE col_email='{}'""")
+            count2=cur.fetchone()[0]
+            print(count2)
+            if count==0 or count2==0: #if proposed changes are not in db, then proceed
+                response=messagebox.askokcancel("Update request",'The following changes ({}) and ([]) will be implemented for ({}). \n\nProceed with the update request?'.format(var_phone,var_email,var_value))
+                print (response)
+                if response:
+                    with conn:
+                        cursor=conn.cursor()
+                        cursor.execute("""UPDATE tbl_phonebook SET col_phone='{0}',col_email='{1}' WHERE col_fullname='{2}'""".format(var_phone,var_email,var_value))
+                        onClear(self)
+                        conn.commit()
+                else:
+                    messagebox.showinfo('Cancel request','No changes have been made to ({}).'.format(var_value))
+            else:
+                messagebox.showinfo('Nochanges detected','Both ({}) and ({}) \nalready exist in the database for this name. \n\nYour update request has been cancelled.'.format(var_phone,var_email,var_value))
+            onClear(self)
+        conn.close()
+    else:
+        messagebox.showerror('Missing information','Please select a name from the list. \nThen edit the phone or email information.')
+    onClear(self)
+                        
+                                            
+                
+            
+    
+    
+
+                    
+                
+                                     
+                      
+                           
                                 
