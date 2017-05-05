@@ -67,7 +67,7 @@ def count_records(cur):
 
 #selects an item in the listbox
 def onSelect(self,event):
-    #calling the even it the self.1stList1 widget
+    #calling the even it the self.lstList1 widget
     varList=event.widget
     select=varList.curselection()[0]
     value=varList.get(select)
@@ -122,7 +122,7 @@ def addToList(self):
         messagebox.showerror("Mossing text error","Please ensure all 4 feilds are filled in!")
 
 def onDelete(self):
-    var_select=self.1stList1.get(self.lstList1.curselection()) #listbox selected value
+    var_select=self.lstList1.get(self.lstList1.curselection()) #listbox selected value
     conn=sqlite3.connect('phonebook.db')
     with conn:
         cur=conn.cursor()
