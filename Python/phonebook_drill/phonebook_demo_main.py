@@ -16,13 +16,13 @@ import phonebook_demo_function
 
 #Frame is the tkinter class from which our class will inherit stuff
 class ParentWindow(Frame):
-    def _init_(self,master,*args,**kwargs):
-        Frame._init_(self,master,*args,**kwargs)
+    def __init__(self,master,*args,**kwargs):
+        Frame.__init__(self,master,*args,**kwargs)
 
         #defines master fram config
         self.master=master
         self.master.minsize(500,300) #height & width
-        slef.master.maxsize(500,300)
+        self.master.maxsize(500,300)
         #centers app on users screen
         phonebook_demo_function.center_window(self,500,300)
         self.master.title('The Tkinter Phonebook Demo')
@@ -54,6 +54,6 @@ class ParentWindow(Frame):
 
 if __name__== "__main__":
     root=tk.Tk()
-    App=ParentWindow(root)
+    App = ParentWindow(root)
     root.mainloop()
     

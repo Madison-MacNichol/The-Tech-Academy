@@ -17,11 +17,11 @@ import phonebook_demo_gui
 def center_window(self,w,h):
     #gets users screen width & height
     screen_width=self.master.winfo_screenwidth()
-    screen_height=slelf.master.winfo_screenheight()
+    screen_height=self.master.winfo_screenheight()
     #calculates x & y coordinates to center app on users screen
     x=int((screen_width/2)-(w/2))
     y=int((screen_height/2)-(h/2))
-    centerGeo=self.master.geometry('{}x{}+{}y{}'.format(w,h,x,y))
+    centerGeo=self.master.geometry('{}x{}+{}+{}'.format(w,h,x,y))
     return centerGeo
 
 #asks the user if they want to close bc they clicked on teh x
