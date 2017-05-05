@@ -9,8 +9,8 @@ from tkinter import messagebox
 
 class Feedback:
 
-    def __init__(self,master):
-
+    def __init__(self, master):
+        
         master.title('Explore California Feedback')
         master.resizable(False,False)
         master.configure(background='#e1d8b9')
@@ -24,8 +24,8 @@ class Feedback:
         self.frame_header=ttk.Frame(master)
         self.frame_header.pack()
 
-        self.logo=PhotoImage(file='C:\\unmount.txtUsers\\Student\\AppDataDesktop\\Ex_Files_Python_Tkinter\\Exercise Files\\Ch08\\tour_logo.gif')
-        ttk.Label(self.frame_header,image=self.logo).grid(row=0, column=0, rowspan=2)
+        self.logo=PhotoImage(file='tour_logo.gif')
+        ttk.Label(self.frame_header,image = self.logo).grid(row=0, column=0, rowspan=2)
         ttk.Label(self.frame_header,text="Thanks for exploring!",style='Header.TLabel').grid(row=0,column=1)
         ttk.Label(self.frame_header,wraplength=300,
                   text=("We're glad you chose Explore California for your recent adventure. "
@@ -33,8 +33,10 @@ class Feedback:
 
         self.frame_content=ttk.Frame(master)
         self.frame_content.pack()
-        
-        ttk.Label(self.frame_content, text='Name: ').grid(row=0,column=0,padx=5,sticky='sw')
+
+        ttk.Label(self.frame_content, text = 'Name:').grid(row = 0, column = 0, padx = 5, sticky = 'sw')
+       # ttk.Label(self.frame_content, text='Name: ').grid(row=0,column=0,padx=5,sticky='sw')
+        #ttk.Label(self.frame_content, text = 'Email:').grid(row = 0, column = 1, padx = 5, sticky = 'sw')
         ttk.Label(self.frame_content, text='Email: ').grid(row=0,column=1,padx=5,sticky='sw')
         ttk.Label(self.frame_content, text='Comments: ').grid(row=2, column=0,padx=5,sticky='sw')
 
