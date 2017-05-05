@@ -9,7 +9,7 @@ from tkinter import messagebox
 
 class Feedback:
 
-    def __init__(self, master):
+    def __init__(self,master):
 
         master.title('Explore California Feedback')
         master.resizable(False,False)
@@ -35,7 +35,7 @@ class Feedback:
         self.frame_content.pack()
         
         ttk.Label(self.frame_content, text='Name: ').grid(row=0,column=0,padx=5,sticky='sw')
-        ttk.Label(self.frame_content, text='Email: ').grid(row=0,colum=1,padx=5,sticky='sw')
+        ttk.Label(self.frame_content, text='Email: ').grid(row=0,column=1,padx=5,sticky='sw')
         ttk.Label(self.frame_content, text='Comments: ').grid(row=2, column=0,padx=5,sticky='sw')
 
         self.entry_name=ttk.Entry(self.frame_content,width=24,font=('Arial',10))

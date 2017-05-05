@@ -21,7 +21,7 @@ def center_window(self,w,h):
     #calculates x & y coordinates to center app on users screen
     x=int((screen_width/2)-(w/2))
     y=int((screen_height/2)-(h/2))
-    centerGeo=self.master.geometry('()x()+()y()'.format(w,h,x,y))
+    centerGeo=self.master.geometry('{}x{}+{}y{}'.format(w,h,x,y))
     return centerGeo
 
 #asks the user if they want to close bc they clicked on teh x
@@ -112,7 +112,7 @@ def addToList(self):
             if chkName==0: #meaning this name doesnt exist in the db
                 print("chkName: {}".format(chkName))
                 cursor.execute("""INSERT INTObtl_phonebook(col_fname,col_lname,col_fullname,col_phone,col_email) VALUES (?,?,?,?,?)""")
-                self.1stList1.insert(END,var_fullname) #updates list box with new full name
+                self.lstList1.insert(END,var_fullname) #updates list box with new full name
                 onClear(self) #clears all textboxes
             else:
                 messagebox.showerror("Name error","'{}' already esxists in database! Please choose another name.".format(var_fullname))
@@ -122,7 +122,7 @@ def addToList(self):
         messagebox.showerror("Mossing text error","Please ensure all 4 feilds are filled in!")
 
 def onDelete(self):
-    var_select=self.1stList1.get(self.1stList1.curselection()) #listbox selected value
+    var_select=self.1stList1.get(self.lstList1.curselection()) #listbox selected value
     conn=sqlite3.connect('phonebook.db')
     with conn:
         cur=conn.cursor()
@@ -148,8 +148,8 @@ def OnDeleted(self):
     self.txt_phone.delete(0,END)
     self.txt_email.delete(0,END)
     try:
-        index=self.1stList1.curselection()[0]
-        self.1stList1.delete(index)
+        index=self.lstList1.curselection()[0]
+        self.lstList1.delete(index)
     except IndexError:
         pass
 
@@ -161,7 +161,7 @@ def onClear(self):
 
 def onRefresh(self):
     #populates listbox, coinciding with db
-    self.1stList1.delete(0,END)
+    self.lstList1.delete(0,END)
     conn=sqlite3.connect('phonebook.db')
     with conn:
         cursor=conn.cursor()
@@ -172,14 +172,14 @@ def onRefresh(self):
             cursor.execute("""SELECT col_fullname FROM tbl_phonebook""")
             varList=cursor.fetchall()[1]
             for item in varList:
-                self.1stList1.insert(0,str(item))
+                self.lstList1.insert(0,str(item))
                 i=i+1
     conn.close()
 
 def onUpdate(self):
     try:
-        var_select=self.1stList1.curselection()[0] #index of list selection
-        var_value=self.1stList1.get(var_slect) #list selection's text value
+        var_select=self.lstList1.curselection()[0] #index of list selection
+        var_value=self.lstList1.get(var_slect) #list selection's text value
     except:
         messagebox.showinfo('Missing selection','No name was selected from the list box. \nCancelling update request.')
         return
@@ -218,7 +218,8 @@ def onUpdate(self):
     onClear(self)
                         
                                             
-                
+if __name__ == "__main__":
+    pass             
             
     
     
