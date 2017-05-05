@@ -19,7 +19,7 @@ class Feedback:
         self.style.configure('TFrame',background='#e1d8b9')
         self.style.configure('TButton',background='#e1d8b9')
         self.style.configure('TLabel',background='#e1d8b9',font=('Arial',11))
-        self.style.configure('Header.TLabel',font=('Arial',18))
+        self.style.configure('Header.TLabel',font=('Arial',18,'bold'))
         
         self.frame_header=ttk.Frame(master)
         self.frame_header.pack()
