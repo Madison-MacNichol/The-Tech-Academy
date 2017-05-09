@@ -15,8 +15,8 @@ import phonebook_demo_function
 #this is the function we called in the last line of our phonebook_demo_main doc
 def load_gui(self):
 
-    self.lbl_fname=tk.Label(self.master,text='First Name:')
-    self.lbl_fname.grid(row=0,column=0,padx=(27,0),pady=(10,0),sticky=N+W)
+    self.lbl_frame=tk.Label(self.master,text='First Name:')
+    self.lbl_frame.grid(row=0,column=0,padx=(27,0),pady=(10,0),sticky=N+W)
     self.lbl_lname=tk.Label(self.master,text='Last Name:')
     self.lbl_lname.grid(row=2,column=0,padx=(27,0),pady=(10,0),sticky=N+W)
     self.lbl_phone=tk.Label(self.master,text='Phone Number:')
@@ -24,11 +24,11 @@ def load_gui(self):
     self.lbl_email=tk.Label(self.master,text='Email Address:')
     self.lbl_email.grid(row=6,column=0,padx=(27,0),pady=(10,0),sticky=N+W)
     self.lbl_user=tk.Label(self.master,text='User:')
-    self.lbl_user.grid(row=0,column=2,padx=(0,0),pady=(10,0),sticky=N+W)
+    self.lbl_user.grid(row=0,column=2,padx=(20,0),pady=(10,0),sticky=N+W)
     
 
     self.txt_frame=tk.Entry(self.master,text='')
-    self.txt_fname.grid(row=1,column=0,rowspan=1,columnspan=2,padx=(30,40),pady=(0,0),sticky=N+E+W)
+    self.txt_frame.grid(row=1,column=0,rowspan=1,columnspan=2,padx=(30,40),pady=(0,0),sticky=N+E+W)
     self.txt_lname=tk.Entry(self.master,text='')
     self.txt_lname.grid(row=3,column=0,rowspan=1,columnspan=2,padx=(30,40),pady=(0,0),sticky=N+E+W)
     self.txt_phone=tk.Entry(self.master,text='')

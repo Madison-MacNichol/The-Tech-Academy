@@ -24,7 +24,7 @@ def center_window(self,w,h):
     centerGeo=self.master.geometry('{}x{}+{}+{}'.format(w,h,x,y))
     return centerGeo
 
-#asks the user if they want to close bc they clicked on teh x
+#asks the user if they want to close bc they clicked on the x
 def ask_quit(self):
     if messagebox.askokcancel('Exit program','OK to exit application'):
         #to close app
@@ -52,12 +52,12 @@ def first_run(self):
     data=('John','Doe','John Doe','111-111-1111','jdoe@gmail.com')
     conn=sqlite3.connect('phonebook.db')
     with conn:
-        cur=conn.corsor()
+        cur=conn.cursor()
         cur,count=count_records(cur)
         if count < 1:
-            cur.execute("""INSERT INTO tbl_phonebook(col_fname,col_lname,col_fullname,col_phone,col_email) VALUES (?,?,?,?,?)""")
+            cur.execute("""INSERT INTO tbl_phonebook(col_fname,col_lname,col_fullname,col_phone,col_email) VALUES (?,?,?,?,?)""",(data))
             conn.commit()
-        conn.close()
+            conn.close()
 
 def count_records(cur):
     count=""
@@ -111,17 +111,18 @@ def addToList(self):
             chkName=count
             if chkName==0: #meaning this name doesnt exist in the db
                 print("chkName: {}".format(chkName))
-                cursor.execute("""INSERT INTObtl_phonebook(col_fname,col_lname,col_fullname,col_phone,col_email) VALUES (?,?,?,?,?)""")
+                cursor.execute("""INSERT INTO tbl_phonebook(col_fname,col_lname,col_fullname,col_phone,col_email) VALUES (?,?,?,?,?)""",(var_fname,var_lname,var_fullname,var_phone,var_email))
                 self.lstList1.insert(END,var_fullname) #updates list box with new full name
                 onClear(self) #clears all textboxes
             else:
                 messagebox.showerror("Name error","'{}' already esxists in database! Please choose another name.".format(var_fullname))
+                onClear(self)
         conn.commit()
         conn.close()
     else:
-        messagebox.showerror("Mossing text error","Please ensure all 4 feilds are filled in!")
+        messagebox.showerror("Missing text error","Please ensure all 4 fields are filled in!")
 
-def onDelete(self):
+def onDeleted(self):
     var_select=self.lstList1.get(self.lstList1.curselection()) #listbox selected value
     conn=sqlite3.connect('phonebook.db')
     with conn:
@@ -129,13 +130,13 @@ def onDelete(self):
         cur.execute("""SELECT COUNT(*) FROM tbl_phonebook""")
         count=cur.fetchone()[0]
         if count > 1:
-            confirm= messagebox.askokcancel("Delete Conformation","All info associated with ({}) \nWill be permanently deleted")
+            confirm = messagebox.askokcancel("Delete Conformation","All info associated with ({}) \nWill be permanently deleted".format(var_select))
             if confirm:
                 conn=sqlite3.connect('phonebook.db')
                 with conn:
                     cursor=conn.cursor()
                     cursor.execute("""DELETE FROM tbl_phonebook WHERE col_fullname='{}'""".format(var_select))
-                onDelete(self) #calls function to clear all textboxes
+                onDeleted(self) #calls function to clear all textboxes
                 conn.commit()
         else:
             confirm=messagebox.showerror("Last record error","({}) is the last record in teh db and cannot be deleted at this time")
@@ -170,7 +171,7 @@ def onRefresh(self):
         i=0
         while i < count:
             cursor.execute("""SELECT col_fullname FROM tbl_phonebook""")
-            varList=cursor.fetchall()[1]
+            varList=cursor.fetchall()[i]
             for item in varList:
                 self.lstList1.insert(0,str(item))
                 i=i+1
@@ -186,20 +187,20 @@ def onUpdate(self):
     #user will not be able to update changes to phone or email
     #user will need to delete entire recordand start over for name changes
     var_phone=self.txt_phone.get().strip()
-    var_email=self,txt_email.get().strip()
+    var_email=self.txt_email.get().strip()
     if (len(var_phone) > 0) and (len(var_email) > 0): #ensures data is present
         conn=sqlite3.connect('phonebook.db')
         with conn:
             cur=conn.cursor()
             #count records to see if users changes are already in db and no futher changes remain to be updated
-            cur.exwcute("""SELECT COUNT(col_phone) FROMtbl_phonebook WHERE col_phone='{}'""")
+            cur.execute("""SELECT COUNT(col_phone) FROM tbl_phonebook WHERE col_phone='{}'""".format(var_phone))
             count=cur.fetchone()[0]
             print(count)
-            cur.execute("""SELECT COUNT(col_email) FROMtbl_phonebook WHERE col_email='{}'""")
+            cur.execute("""SELECT COUNT(col_email) FROM tbl_phonebook WHERE col_email='{}'""".format(var_email))
             count2=cur.fetchone()[0]
             print(count2)
             if count==0 or count2==0: #if proposed changes are not in db, then proceed
-                response=messagebox.askokcancel("Update request",'The following changes ({}) and ([]) will be implemented for ({}). \n\nProceed with the update request?'.format(var_phone,var_email,var_value))
+                response=messagebox.askokcancel("Update request",'The following changes ({}) and ({}) will be implemented for ({}). \n\nProceed with the update request?'.format(var_phone,var_email,var_value))
                 print (response)
                 if response:
                     with conn:
@@ -210,7 +211,7 @@ def onUpdate(self):
                 else:
                     messagebox.showinfo('Cancel request','No changes have been made to ({}).'.format(var_value))
             else:
-                messagebox.showinfo('Nochanges detected','Both ({}) and ({}) \nalready exist in the database for this name. \n\nYour update request has been cancelled.'.format(var_phone,var_email,var_value))
+                messagebox.showinfo('No changes detected','Both ({}) and ({}) \nalready exist in the database for this name. \n\nYour update request has been cancelled.'.format(var_phone,var_email))
             onClear(self)
         conn.close()
     else:

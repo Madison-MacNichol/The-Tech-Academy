@@ -19,7 +19,7 @@ class ParentWindow(Frame):
     def __init__(self,master,*args,**kwargs):
         Frame.__init__(self,master,*args,**kwargs)
 
-        #defines master fram config
+        #defines master frame config
         self.master=master
         self.master.minsize(500,300) #height & width
         self.master.maxsize(500,300)
