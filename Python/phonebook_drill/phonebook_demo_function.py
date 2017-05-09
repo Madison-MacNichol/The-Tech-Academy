@@ -122,7 +122,7 @@ def addToList(self):
     else:
         messagebox.showerror("Missing text error","Please ensure all 4 fields are filled in!")
 
-def onDeleted(self):
+def onDelete(self):
     var_select=self.lstList1.get(self.lstList1.curselection()) #listbox selected value
     conn=sqlite3.connect('phonebook.db')
     with conn:
@@ -139,8 +139,8 @@ def onDeleted(self):
                 onDeleted(self) #calls function to clear all textboxes
                 conn.commit()
         else:
-            confirm=messagebox.showerror("Last record error","({}) is the last record in teh db and cannot be deleted at this time")
-        conn.close()
+            confirm=messagebox.showerror("Last record error","({}) is the last record in the db and cannot be deleted at this time".format(var_select,var_select))
+    conn.close()
 
 def OnDeleted(self):
     #clears text in these textboxes
