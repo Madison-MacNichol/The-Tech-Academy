@@ -2,6 +2,10 @@ import sqlite3
 import time
 import datetime
 import random
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from matplotlib import style
+style.use('fivethirtyeight')
 
 conn=sqlite3.connect('tutorial.db')
 c=conn.cursor()
@@ -15,8 +19,6 @@ def data_entry():
     c.close()
     conn.close()
 
-
-
 def dynamic_data_entry():
     unix=time.time()
     date=str(datetime.datetime.fromtimestamp(unix).strftime('%Y-%m-%d %H: %M: %S:'))
@@ -26,14 +28,33 @@ def dynamic_data_entry():
               (unix, date, keyword, value))
     conn.commit()
 
+def read_from_db():
+    c.execute("SELECT keyword, unix FROM stuffToDo WHERE unix > 145261845")
+    #data=c.fetchall()
+    #print(data)
+    for row in c.fetchall():
+        print(row)
 
-create_table()
-#data_entry()
+def graph_data():
+    c.execute('SELECT datestamp, value FROM stuffToDo')
+    dates = []
+    valeus = []
+    for row in c.fetchall:
+        dates.append(datetime.datetime.fromtimestamp(row[0]))
+        values.append(row[1])
+    plt.plot_date(dates, values,'-')
+    plt.show()
+    
 
 
-for i in range(10):
-    dynamic_data_entry()
-    time.sleep(1)
+##create_table()
+###data_entry()
+##
+##for i in range(10):
+##    dynamic_data_entry()
+##    time.sleep(1)
+##read_from_db()
+graph_data()
 c.close()
 conn.close
 
