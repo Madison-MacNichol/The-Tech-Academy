@@ -71,7 +71,7 @@ def onSelect(self,event):
     varList=event.widget
     select=varList.curselection()[0]
     value=varList.get(select)
-    conn=sqlite.connect('phonebook.db')
+    conn=sqlite3.connect('phonebook.db')
     with conn:
         cursor=conn.cursor()
         cursor.execute("""SELECT col_fname,col_lname,col_phone,col_email FROM tbl_phonebook WHERE col_fullname=(?)""",[value])
@@ -102,7 +102,7 @@ def addToList(self):
     if not "@" or not "." in var_email:
         print("Incorrect email format!")
     if(len(var_fname)>0) and (len(var_lname)>0) and (len(var_phone)>0) and (len(var_email)>0): #makes sure user fills in all feilds
-        conn=sqlite3.connect('phonebook.bd')
+        conn=sqlite3.connect('phonebook.db')
         with conn:
             cursor=conn.cursor()
             #this checks the database for the full name and alerts user
@@ -136,7 +136,7 @@ def onDelete(self):
                 with conn:
                     cursor=conn.cursor()
                     cursor.execute("""DELETE FROM tbl_phonebook WHERE col_fullname='{}'""".format(var_select))
-                onDeleted(self) #calls function to clear all textboxes
+                OnDeleted(self) #calls function to clear all textboxes
                 conn.commit()
         else:
             confirm=messagebox.showerror("Last record error","({}) is the last record in the db and cannot be deleted at this time".format(var_select,var_select))
