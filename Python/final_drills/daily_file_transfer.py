@@ -19,7 +19,7 @@ def checkFile():
 
 
 def moveFiles(result):
-    ##Copies all files in list from folder A that have been modified to folder B
+    ##Moves all files in list from folder A that have been modified to folder B
     
     destination = "C:\\Users\\Student\\Desktop\\Folder B" # can be changed to any destination folder
     for filepath in result:
