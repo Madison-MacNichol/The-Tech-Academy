@@ -20,6 +20,12 @@ class MyGui:
         self.label = Label(master, text = "Time last checked: ")
         self.label.pack()
 
+        self.last_checked = StringVar() 
+        self.last_checked.set('adfkjekajfmd') 
+
+        self.label = Label(master, text = self.last_checked.get())
+        self.label.pack()
+
         self.greet_button = Button(master, text="Browse", command=self.check)
         self.greet_button.pack()
 
@@ -27,6 +33,8 @@ class MyGui:
         self.greet_button.pack()
         
         self.create_db()
+        
+
 
 
     def create_db(self):
@@ -38,9 +46,6 @@ class MyGui:
         conn.close() 
         self.insert_data()
 
-
-        self.last_checked = StringVar() ##not sure where to put this....
-        self.last_checked.set(LastChecked)
 
 ##    def first_instance(self):
 ##         try:
@@ -54,16 +59,19 @@ class MyGui:
         conn = sqlite3.connect('checkfile.db')
         with conn:
             c = conn.cursor()
+            timeVariable = datetime.datetime.now()
+            print(timeVariable)
             c.execute('INSERT INTO tbl_modified(LastChecked) VALUES(?)', (timeVariable,))
+            self.last_checked.set(LastChecked)
             conn.commit()
         self.last_checked()
 
     def last_checked(self):
-                conn = sqlite3.connect('checkfile.db')
+        conn = sqlite3.connect('checkfile.db')
         with conn:
             c = conn.cursor()
-        c.execute('SELECT tbl_modified FROM checkfile.db')
-        return c.fetchone()[0]
+            c.execute('SELECT tbl_modified(LastChecked) FROM checkfile.db')
+            return c.fetchone()[0]
 
 
 
@@ -87,7 +95,6 @@ class MyGui:
 
     def moveFiles(self):
         print(self.result)
-        timeVariable = datetime.datetime.now() #
         destination = filedialog.askdirectory()
         for filepath in self.result:
             shutil.move(filepath, destination)
