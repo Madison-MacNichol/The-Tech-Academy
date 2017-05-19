@@ -5,8 +5,9 @@ from tkinter import messagebox
 import os
 import shutil
 import time
+import datetime
 import sqlite3
-
+    
 
 class MyGui:
     def __init__(self, master):
@@ -16,12 +17,60 @@ class MyGui:
         self.label = Label(master, text="Browse for modified files")
         self.label.pack()
 
+        self.label = Label(master, text = "Time last checked: ")
+        self.label.pack()
+
         self.greet_button = Button(master, text="Browse", command=self.check)
         self.greet_button.pack()
 
         self.greet_button = Button(master, text="Move", command=self.moveFiles)
         self.greet_button.pack()
+        
+        self.create_db()
 
+
+    def create_db(self):
+        conn = sqlite3.connect('checkfile.db')
+        with conn:
+            c = conn.cursor()
+            c.execute ('CREATE TABLE IF NOT EXISTS tbl_modified(ID INTEGER PRIMARY KEY, LastChecked TIMESTAMP);')
+            conn.commit()
+        conn.close() 
+        self.insert_data()
+
+
+        self.last_checked = StringVar() ##not sure where to put this....
+        self.last_checked.set(LastChecked)
+
+##    def first_instance(self):
+##         try:
+##            self.last_checked.set(last_checked())
+##         except:
+##            self.last_checked.set("No data in database")
+##         self.label = Label(master, time = self.last_checked)
+
+
+    def insert_data(self):
+        conn = sqlite3.connect('checkfile.db')
+        with conn:
+            c = conn.cursor()
+            c.execute('INSERT INTO tbl_modified(LastChecked) VALUES(?)', (timeVariable,))
+            conn.commit()
+        self.last_checked()
+
+    def last_checked(self):
+                conn = sqlite3.connect('checkfile.db')
+        with conn:
+            c = conn.cursor()
+        c.execute('SELECT tbl_modified FROM checkfile.db')
+        return c.fetchone()[0]
+
+
+
+
+
+
+    
 
     def checkFile(self): 
         self.result = []
@@ -38,10 +87,12 @@ class MyGui:
 
     def moveFiles(self):
         print(self.result)
+        timeVariable = datetime.datetime.now() #
         destination = filedialog.askdirectory()
         for filepath in self.result:
             shutil.move(filepath, destination)
         self.transferComplete()
+        self.insert_data()
 
 
     def check(self):
