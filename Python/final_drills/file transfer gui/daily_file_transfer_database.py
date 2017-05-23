@@ -21,7 +21,13 @@ class MyGui:
         self.label.pack()
 
         self.last_checked = StringVar()
-        self.last_checked.set('adfkjekajfmd') 
+        try:
+            #this checks for the return value of the self.last_check() which is recent which is "c.fetchone()[0]"
+            self.last_checked.set(self.last_check())
+        except:
+            #if there is no timestamp in the database yet then display the below message
+            self.last_checked.set('No data yet')
+ 
 
         self.entry = Entry(master, text = self.last_checked)
         self.entry.pack()
@@ -43,16 +49,19 @@ class MyGui:
             c.execute ('CREATE TABLE IF NOT EXISTS tbl_modified(ID INTEGER PRIMARY KEY, LastChecked TIMESTAMP);')
             conn.commit()
         conn.close() 
-        self.insert_data()
+        #self.insert_data()
 
 
     def last_check(self):
         conn = sqlite3.connect('checkfile.db')
         with conn:
             c = conn.cursor()
-            c.execute('SELECT tbl_modified.LastChecked FROM tbl_modified')
+            #add order by and descending to select statement
+            #c.execute('SELECT tbl_modified.LastChecked FROM tbl_modified ORDER BY LastChecked DESC')
+            c.execute('SELECT tbl_modified.LastChecked FROM tbl_modified WHERE ID = (SELECT MAX(ID)FROM tbl_modified)')
             recent = c.fetchone()[0]
-            self.last_checked.set(recent) 
+            #the below line is replaced with self.last_checked.set(self.last_check()) in the above try except
+            #self.last_checked.set(recent) 
             return recent
     
 
@@ -74,7 +83,9 @@ class MyGui:
         destination = filedialog.askdirectory()
         for filepath in self.result:
             shutil.move(filepath, destination)
-            self.insert_data()
+        #i removed the call to your insert_data() method from your for
+        #loop so it only prints one timestamp for when files are moved not each file
+        self.insert_data()
         self.transferComplete()
         
 
