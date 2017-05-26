@@ -1,0 +1,1 @@
+This was they final project of the Python course at The Tech Academy. It was done in several stages and I was required to make a functional program that could move files from one location to another and log the time in a database.
