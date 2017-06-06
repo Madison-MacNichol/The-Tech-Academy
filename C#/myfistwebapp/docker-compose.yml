@@ -1,0 +1,8 @@
+version: '2.1'
+
+services:
+  myfistwebapp:
+    image: myfistwebapp
+    build:
+      context: .\myfistwebapp
+      dockerfile: Dockerfile
