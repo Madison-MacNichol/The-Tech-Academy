@@ -43,7 +43,7 @@ namespace EpicSpiesChallenge
 
 				newCalendar.SelectedDate = earliestNewAssignmentDate;
 				newCalendar.VisibleDate = earliestNewAssignmentDate;
-				 
+				
 			}
 
 
