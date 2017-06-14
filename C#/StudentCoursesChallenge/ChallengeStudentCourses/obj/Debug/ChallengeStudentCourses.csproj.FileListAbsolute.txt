@@ -1,0 +1,18 @@
+C:\Users\Bob Tabor\Documents\Visual Studio 2013\Projects\ChallengeStudentCourses\ChallengeStudentCourses\bin\ChallengeStudentCourses.dll.config
+C:\Users\Bob Tabor\Documents\Visual Studio 2013\Projects\ChallengeStudentCourses\ChallengeStudentCourses\bin\ChallengeStudentCourses.dll
+C:\Users\Bob Tabor\Documents\Visual Studio 2013\Projects\ChallengeStudentCourses\ChallengeStudentCourses\bin\ChallengeStudentCourses.pdb
+C:\Users\Bob Tabor\Documents\Visual Studio 2013\Projects\ChallengeStudentCourses\ChallengeStudentCourses\obj\Debug\ChallengeStudentCourses.csprojResolveAssemblyReference.cache
+C:\Users\Bob Tabor\Documents\Visual Studio 2013\Projects\ChallengeStudentCourses\ChallengeStudentCourses\obj\Debug\ChallengeStudentCourses.dll
+C:\Users\Bob Tabor\Documents\Visual Studio 2013\Projects\ChallengeStudentCourses\ChallengeStudentCourses\obj\Debug\ChallengeStudentCourses.pdb
+C:\Users\Bob Tabor\Desktop\CS-ASP_051-Solution_Code\ChallengeStudentCourses\ChallengeStudentCourses\bin\ChallengeStudentCourses.dll.config
+C:\Users\Bob Tabor\Desktop\CS-ASP_051-Solution_Code\ChallengeStudentCourses\ChallengeStudentCourses\bin\ChallengeStudentCourses.dll
+C:\Users\Bob Tabor\Desktop\CS-ASP_051-Solution_Code\ChallengeStudentCourses\ChallengeStudentCourses\bin\ChallengeStudentCourses.pdb
+C:\Users\Bob Tabor\Desktop\CS-ASP_051-Solution_Code\ChallengeStudentCourses\ChallengeStudentCourses\obj\Debug\ChallengeStudentCourses.csprojResolveAssemblyReference.cache
+C:\Users\Bob Tabor\Desktop\CS-ASP_051-Solution_Code\ChallengeStudentCourses\ChallengeStudentCourses\obj\Debug\ChallengeStudentCourses.dll
+C:\Users\Bob Tabor\Desktop\CS-ASP_051-Solution_Code\ChallengeStudentCourses\ChallengeStudentCourses\obj\Debug\ChallengeStudentCourses.pdb
+C:\Users\Student\Documents\GitHub\The-Tech-Academy\C#\StudentCoursesChallenge\ChallengeStudentCourses\bin\ChallengeStudentCourses.dll.config
+C:\Users\Student\Documents\GitHub\The-Tech-Academy\C#\StudentCoursesChallenge\ChallengeStudentCourses\bin\ChallengeStudentCourses.dll
+C:\Users\Student\Documents\GitHub\The-Tech-Academy\C#\StudentCoursesChallenge\ChallengeStudentCourses\bin\ChallengeStudentCourses.pdb
+C:\Users\Student\Documents\GitHub\The-Tech-Academy\C#\StudentCoursesChallenge\ChallengeStudentCourses\obj\Debug\ChallengeStudentCourses.csprojResolveAssemblyReference.cache
+C:\Users\Student\Documents\GitHub\The-Tech-Academy\C#\StudentCoursesChallenge\ChallengeStudentCourses\obj\Debug\ChallengeStudentCourses.dll
+C:\Users\Student\Documents\GitHub\The-Tech-Academy\C#\StudentCoursesChallenge\ChallengeStudentCourses\obj\Debug\ChallengeStudentCourses.pdb
