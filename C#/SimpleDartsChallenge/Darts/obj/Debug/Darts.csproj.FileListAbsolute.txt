@@ -1,0 +1,5 @@
+c:\users\student\Documents\GitHub\The-Tech-Academy\C#\SimpleDartsChallenge\Darts\bin\Debug\Darts.dll
+c:\users\student\Documents\GitHub\The-Tech-Academy\C#\SimpleDartsChallenge\Darts\bin\Debug\Darts.pdb
+c:\users\student\Documents\GitHub\The-Tech-Academy\C#\SimpleDartsChallenge\Darts\obj\Debug\Darts.csprojResolveAssemblyReference.cache
+c:\users\student\Documents\GitHub\The-Tech-Academy\C#\SimpleDartsChallenge\Darts\obj\Debug\Darts.dll
+c:\users\student\Documents\GitHub\The-Tech-Academy\C#\SimpleDartsChallenge\Darts\obj\Debug\Darts.pdb
