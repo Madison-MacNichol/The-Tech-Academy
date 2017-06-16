@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F50B02C8-6C3C-4CB9-B215-2579088902E0}</ProjectGuid>
+    <ProjectGuid>{4A2457D2-0DB3-4268-835E-044135B79AAC}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -43,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -65,7 +71,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Default.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -79,6 +84,7 @@
     <Content Include="App_Data\PapaBobsDb_log.ldf">
       <DependentUpon>PapaBobsDb.mdf</DependentUpon>
     </Content>
+    <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -99,12 +105,12 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PapaBobs.Domain\PapaBobs.Domain.csproj">
-      <Project>{897de071-0626-4a79-873e-dbb6e09b6bc0}</Project>
+    <ProjectReference Include="..\ClassLibrary1\PapaBobs.Domain.csproj">
+      <Project>{7eeb036a-adba-48be-bd87-a6ac546e76bd}</Project>
       <Name>PapaBobs.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\PapaBobs.DTO\PapaBobs.DTO.csproj">
-      <Project>{d3223db6-91e3-4ef9-a770-06e3b20afa3e}</Project>
+      <Project>{14b1c379-1045-4e69-8bd1-9162653c256a}</Project>
       <Name>PapaBobs.DTO</Name>
     </ProjectReference>
   </ItemGroup>
@@ -121,9 +127,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>52044</DevelopmentServerPort>
+          <DevelopmentServerPort>49919</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:52044/</IISUrl>
+          <IISUrl>http://localhost:49919/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

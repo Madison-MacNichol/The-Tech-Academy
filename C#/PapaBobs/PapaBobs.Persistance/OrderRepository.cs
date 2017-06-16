@@ -18,14 +18,14 @@ namespace PapaBobs.Persistance
 			order.Crust = 0;
 			order.Pepperoni = true;
 			order.Name = "Test";
-			order.Address = "446 Ivy Ln";
-			order.Zip = "12345";
-			order.Phone = "555-555-5555";
+			order.Address = "123 Elm";
+			order.ZipCode = "12345";
+			order.Phone = "555-5555";
 			order.PaymentType = 0;
 			order.TotalCost = 16.50M;
 
 			db.Orders.Add(order);
-
+			//db.SaveChanges();
 		}
     }
 }

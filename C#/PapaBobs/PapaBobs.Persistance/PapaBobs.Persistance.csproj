@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0A01D303-422C-4B47-A19E-6F1256797E72}</ProjectGuid>
+    <ProjectGuid>{213E46EE-D839-4AEB-BC4B-FEE7151CB5A9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PapaBobs.Persistance</RootNamespace>
@@ -50,6 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="OrderRepository.cs" />
+    <Compile Include="Order.cs">
+      <DependentUpon>PapaBobsEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="PapaBobsEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -66,13 +69,10 @@
       <DependentUpon>PapaBobsEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Table.cs">
-      <DependentUpon>PapaBobsEntities.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PapaBobs.DTO\PapaBobs.DTO.csproj">
-      <Project>{d3223db6-91e3-4ef9-a770-06e3b20afa3e}</Project>
+      <Project>{14b1c379-1045-4e69-8bd1-9162653c256a}</Project>
       <Name>PapaBobs.DTO</Name>
     </ProjectReference>
   </ItemGroup>

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="PapaBobsDbModelStoreContainer" CdmEntityContainer="PapaBobsDbEntities">
-    <EntitySetMapping Name="Tables">
-      <EntityTypeMapping TypeName="PapaBobsDbModel.Table">
-        <MappingFragment StoreEntitySet="Table">
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="PapaBobsDbModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
           <ScalarProperty Name="OrderId" ColumnName="OrderId" />
           <ScalarProperty Name="Size" ColumnName="Size" />
           <ScalarProperty Name="Crust" ColumnName="Crust" />
@@ -14,7 +14,7 @@
           <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
           <ScalarProperty Name="Completed" ColumnName="Completed" />

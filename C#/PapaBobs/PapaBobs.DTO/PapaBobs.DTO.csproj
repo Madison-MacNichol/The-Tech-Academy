@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>d3223db6-91e3-4ef9-a770-06e3b20afa3e</ProjectGuid>
+    <ProjectGuid>14b1c379-1045-4e69-8bd1-9162653c256a</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PapaBobs.DTO</RootNamespace>
