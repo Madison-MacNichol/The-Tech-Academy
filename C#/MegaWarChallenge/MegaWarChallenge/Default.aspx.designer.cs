@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MegaWarChallenge {
+namespace MegaChallengeWar {
     
     
     public partial class Default {

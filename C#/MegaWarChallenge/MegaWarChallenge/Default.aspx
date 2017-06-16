@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="MegaWarChallenge.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="MegaChallengeWar.Default" %>
 
 <!DOCTYPE html>
 
@@ -8,14 +8,17 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-        	Play War!!<br />
-			<br />
-			<asp:Button ID="playButton" runat="server" OnClick="playButton_Click" Text="Play" />
-			<br />
-			<br />
-			<asp:Label ID="resultLabel" runat="server"></asp:Label>
-        </div>
+    <div>
+    
+        Play War!<br />
+        <br />
+        <asp:Button ID="playButton" runat="server" OnClick="playButton_Click" Text="Play" />
+        <br />
+        <br />
+        <br />
+		<asp:Label ID="resultLabel" runat="server"></asp:Label>
+    
+    </div>
     </form>
 </body>
 </html>

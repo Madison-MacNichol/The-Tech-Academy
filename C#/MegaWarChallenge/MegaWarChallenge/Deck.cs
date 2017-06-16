@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 
-namespace MegaWarChallenge
+namespace MegaChallengeWar
 {
 	public class Deck
 	{
@@ -13,11 +14,18 @@ namespace MegaWarChallenge
 
 		public Deck()
 		{
+			/*
+            _deck = new List<Card>() {
+                new Card { Suit="Clubs", Kind="2"},
+                new Card { Suit ="Clubs", Kind="3"},
+            }
+             */
+
 			_deck = new List<Card>();
 			_random = new Random();
 			_sb = new StringBuilder();
 
-			string[] suits = new string[] { "Clubs", "Diamonds", "Hearts", "Spades"};
+			string[] suits = new string[] { "Clubs", "Diamonds", "Hearts", "Spades" };
 			string[] kinds = new string[] { "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace" };
 
 			foreach (var suit in suits)
@@ -29,15 +37,14 @@ namespace MegaWarChallenge
 			}
 		}
 
-		public void Deal(Player player1, Player player2)
+		public string Deal(Player player1, Player player2)
 		{
 			while (_deck.Count > 0)
 			{
-				//Deals a card to each player randomly
+				// Deal a card to each player randomly
 				dealCard(player1);
 				dealCard(player2);
 			}
-	
 			return _sb.ToString();
 		}
 

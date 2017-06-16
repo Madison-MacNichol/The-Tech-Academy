@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MegaWarChallenge
+namespace MegaChallengeWar
 {
 	public class Player
 	{
@@ -14,5 +14,6 @@ namespace MegaWarChallenge
 		{
 			Cards = new List<Card>();
 		}
+
 	}
 }
