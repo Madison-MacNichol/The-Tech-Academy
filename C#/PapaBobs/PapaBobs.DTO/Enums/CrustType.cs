@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PapaBobs.DTO
+namespace PapaBobs.DTO.Enums
 {
-    public class Class1
-    {
-    }
+	public enum CrustType
+	{
+		Regular,
+		Thin,
+		Thick
+	}
 }
