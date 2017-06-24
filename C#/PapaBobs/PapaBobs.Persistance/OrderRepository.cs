@@ -13,7 +13,7 @@ namespace PapaBobs.Persistance
 		{
 			var db = new PapaBobsDbEntities();
 
-			var order = convertToEntity();
+			var order = convertToEntity(orderDTO);
 			db.Orders.Add(order);
 			db.SaveChanges();
 		}

@@ -17,7 +17,7 @@ namespace PapaBobs.Domain
 			if (orderDTO.Address.Trim().Length == 0)
 				throw new Exception("Address is required.");
 
-			if (orderDTO.Zip.Trim().Length == 0)
+			if (orderDTO.ZipCode.Trim().Length == 0)
 				throw new Exception("Zip is required.");
 
 			if (orderDTO.Phone.Trim().Length == 0)
@@ -25,17 +25,17 @@ namespace PapaBobs.Domain
 
 			orderDTO.OrderId = Guid.NewGuid();
 			orderDTO.TotalCost = PizzaPriceManager.CalculateCost(orderDTO);
-			Persistance.OrderRepository.CreateOrder(order);
+			Persistance.OrderRepository.CreateOrder(orderDTO);
 		}
 
 		public static object GetOrders()
 		{
-			return Persistence.OrderRepository.GetOrders();
+			return Persistance.OrderRepository.GetOrders();
 		}
 
 		public static void CompleteOrder(Guid orderId)
 		{
-			Persistence.OrderRepository.CompleteOrder(orderId);
+			Persistance.OrderRepository.CompleteOrder(orderId);
 		}
 	}
 }

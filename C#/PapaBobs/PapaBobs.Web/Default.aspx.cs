@@ -122,7 +122,7 @@ namespace PapaBobs.Web
 			order.GreenPeppers = greenPeppersCheckBox.Checked;
 			order.Name = nameTextBox.Text;
 			order.Address = addressTextBox.Text;
-			order.Zip = zipTextBox.Text;
+			order.ZipCode = zipTextBox.Text;
 			order.Phone = phoneTextBox.Text;
 			order.PaymentType = determinePaymentType();
 
