@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ORderManagement.aspx.cs" Inherits="PapaBobs.Web.ORderManagement" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OrderManagement.aspx.cs" Inherits="PapaBobs.Web.OrderManagement" %>
 
 <!DOCTYPE html>
 
@@ -10,11 +10,11 @@
     <form id="form1" runat="server">
         <div>
 		<h1>Order Management</h1>
-		<asp:GridView ID="GridView1" runat="server">
-			<Columns>
-				<asp:ButtonField Text="Complete" />
-			</Columns>
-			</asp:GridView>
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="True" OnRowCommand="GridView1_RowCommand">
+        <Columns>
+            <asp:ButtonField Text="Complete" />
+        </Columns>
+        </asp:GridView>
         </div>
     </form>
 </body>

@@ -10,7 +10,7 @@
 namespace PapaBobs.Web {
     
     
-    public partial class ORderManagement {
+    public partial class OrderManagement {
         
         /// <summary>
         /// form1 control.
