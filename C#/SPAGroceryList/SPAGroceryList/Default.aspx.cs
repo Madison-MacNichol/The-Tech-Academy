@@ -11,20 +11,19 @@ namespace SPAGroceryList
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+			
 		}
 
 		protected void addButton_Click(object sender, EventArgs e)
 		{
 			string item = (groceryBox.Text);
 			string result = item;
-			myGroceryList.Text = result;
+			groceryList.Text = result;
 		}
 
-		public class ListBox : ListControl
+		protected void removeButton_Click(object sender, EventArgs e)
 		{
-			
-		}
 
+		}
 	}
 }
