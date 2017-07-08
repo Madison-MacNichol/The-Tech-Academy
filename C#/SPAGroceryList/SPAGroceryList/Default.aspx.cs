@@ -16,14 +16,25 @@ namespace SPAGroceryList
 
 		protected void addButton_Click(object sender, EventArgs e)
 		{
-			string item = (groceryBox.Text);
+			/*string item = (groceryBox.Text);
 			string result = item;
-			groceryList.Text = result;
+			groceryList.Text = result;*/
+
 		}
 
 		protected void removeButton_Click(object sender, EventArgs e)
 		{
+			
+		}
 
+		protected void groceryList_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			
+		}
+
+		protected void groceryBox_Leave(object sender, System.EventArgs e)
+		{
+			groceryList.Items.Add(((TextBox)sender).Text);
 		}
 	}
 }
