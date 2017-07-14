@@ -20,7 +20,7 @@
 	<form id="addItem" runat="server">
     <p>Add item: </p>
 		<asp:TextBox ID="groceryBox" runat="server" type="text" data-bind='value:itemToAdd, valueUpdate: "afterkeydown"'></asp:TextBox>
-&nbsp;&nbsp;<asp:Button ID="addButton" runat="server" OnClick="addButton_Click" Text="Add" type="submit" data-bind="enable: itemToAdd().length > 0"/>
+&nbsp;&nbsp;<asp:Button ID="addButton" runat="server" OnClick="addButton_Click" Text="Add" type="submit" data-bind="click: addItem, enable: itemToAdd().length > 0"/>
  
 	<p>Your List:</p>
 		<asp:ListBox ID="groceryList" runat="server"  multiple="multiple" data-bind="options:allItems, selectedOptions:selectedItems" style="width: 616px; height: 160px" OnSelectedIndexChanged="groceryList_SelectedIndexChanged" AppendDataBoundItems="False" AutoPostBack="False"></asp:ListBox>
@@ -40,8 +40,7 @@
 				 
 		this.addItem = function () {
 				if ((this.itemToAdd() != "") && (this.allItems.indexOf(this.itemToAdd()) < 0)) // Prevent blanks and duplicates
-						this.allItems.push(this.itemToAdd());
-				this.itemToAdd(""); // Clear the text box
+						this.allItems.push(this.itemToAdd()); 
 		};
 				
 		this.removeSelected = function () {
