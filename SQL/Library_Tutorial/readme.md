@@ -1,5 +1,13 @@
-Purpose: To build a database and practice queries in SQL Server Management Studios
+### Library Database
+***
 
-Method: The tables were populated with imaginary data and linked with primary keys, then queried based on the assigned questions.
+#### Objective 
+To build a practice database and practice queries in SQL Server Management Studios to become more familiar with database usage in SQL Server Management Studio.
 
-Result: All queries were successful 
+#### Method 
+
+The tables were populated with imaginary data and linked with primary keys, then queried based on the assigned questions.
+
+#### Result 
+
+All queries were successful 
