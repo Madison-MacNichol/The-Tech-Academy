@@ -1,11 +1,15 @@
-# The-Tech-Academy
-Course work for The Tech Academy
+## The-Tech-Academy Repository
+***
+### Objective
 
-If you need to work from home computer:
-  clone, make changes, then push back using this:
-    git add .
-    git commit -m""
-    git remote add origin https://github.com/USERNAME/papers.git
-    git push -u origin master
-   
-BUT REMEMEBER!!! The local files on your school computer will no longer be the most up to date ones!!:) Happy Coding.
+This Repository contains all projects and course work done form January 2017-August 2017 at The Tech Academy. Course work includes files for:
+- HTML/CSS
+- SQL
+- Python
+- Small Basic
+- C#
+The purpose of this repository is to showcase my foundational knowledge in these subjects. For a more well-rounded perspective of me as an individual please visit my personal website https://madison-macnichol.github.io/ or my personal blog https://universallyso.blogspot.com/.
+
+Cheers!
+
+
