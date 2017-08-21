@@ -1,4 +1,4 @@
-### A space station resort webpage
+### Space Webpage
 ***
 
 #### Objective
